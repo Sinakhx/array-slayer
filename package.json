@@ -1,0 +1,19 @@
+{
+  "name": "array-slayer",
+  "version": "0.1.0",
+  "description": "functional programming & readable code by extending JS array methods",
+  "main": "lib/src/arraySlayer.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "array-slayer",
+    "fp",
+    "array",
+    "utility",
+    "javascript"
+  ],
+  "author": "Sina Khodabandehloo <khodabandehloo.sina@gmail.com>",
+  "license": "MIT"
+}
