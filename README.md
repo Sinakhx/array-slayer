@@ -1,6 +1,6 @@
 # array-slayer
 
-With the array-slayer array utility library you have:
+With the array-slayer utility library you have:
 
 - smooth experice of functional programming tackling daily problems with arrays.
 - faster development speed by letting array-slayer solve usual problems for you.

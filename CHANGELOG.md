@@ -10,6 +10,8 @@ First public release.
 ### TODO:
 - seperating methods as modules
 - adding a chain method for modules
+- adding typescript
+- adding husky, lint-staged & commit-lint
 - writing docs
 - writing tests
-- adding a bundler
+- adding a bundler (esbuild)
