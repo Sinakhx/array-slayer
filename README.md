@@ -12,4 +12,4 @@ The [MIT License][license-url] (MIT)
 
 &copy; 2021 Sina Khodabandehloo
 
-[license-url]:  https://github.com/Sinakhx/array-slayer/blob/main/LICENSE
+[license-url]:  https://github.com/Sinakhx/array-slayer/blob/master/LICENSE
