@@ -1,8 +1,9 @@
 {
   "name": "array-slayer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "functional programming & readable code by extending JS array methods",
   "main": "lib/src/arraySlayer.js",
+  "private": true,
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
