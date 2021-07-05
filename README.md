@@ -17,7 +17,13 @@ const array = [
     [47,38,4,{ a: "Foo4", b: "Bar4", c: { d: "zd", e: { f: 1 }, g: 4 } }],
 ];
 
-const result = _(array).column(3, "c.e.f").concat([17, 2, 1, 18]).replaceByValue(1, 100).unique().sort({ order: "ascending", sortType: "QuickSort"}).value;
+const result = _(array)
+                .column(3, "c.e.f")
+                .concat([17, 2, 1, 18])
+                .replaceByValue(1, 100)
+                .unique()
+                .sort({ order: "ascending", sortType: "QuickSort"})
+                .value;
 
 console.log(result); //-> [2, 5, 7, 9, 17, 18, 100]
 ```
