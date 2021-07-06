@@ -1,11 +1,16 @@
 {
   "name": "array-slayer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "functional programming & readable code by extending JS array methods",
-  "main": "lib/src/arraySlayer.js",
   "private": true,
   "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    "./": "./lib/src/",
+    "./fp": "./lib/src/fp"
+  },
   "scripts": {
+    "build": "node lib/utils/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,5 +21,8 @@
     "javascript"
   ],
   "author": "Sina Khodabandehloo <khodabandehloo.sina@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "esbuild": "^0.12.14"
+  }
 }
