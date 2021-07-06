@@ -13,6 +13,10 @@
     "build": "node lib/utils/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sinakhx/array-slayer.git"
+  },
   "keywords": [
     "array-slayer",
     "fp",
@@ -22,6 +26,10 @@
   ],
   "author": "Sina Khodabandehloo <khodabandehloo.sina@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sinakhx/array-slayer/issues"
+  },
+  "homepage": "https://github.com/Sinakhx/array-slayer#readme",
   "dependencies": {
     "esbuild": "^0.12.14"
   }
