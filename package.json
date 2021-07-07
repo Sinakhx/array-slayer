@@ -1,13 +1,12 @@
 {
   "name": "array-slayer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "functional programming & readable code by extending JS array methods",
   "private": true,
   "type": "module",
-  "main": "./dist/index.js",
   "exports": {
-    "./": "./lib/src/",
-    "./fp": "./lib/src/fp"
+    ".": "./dist/index.js",
+    "./": "./dist/fp/"
   },
   "scripts": {
     "build": "node lib/utils/build.js",

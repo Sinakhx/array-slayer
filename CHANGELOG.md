@@ -1,5 +1,11 @@
 # array-slayer changes
 
+## \[0.2.2] - 2021-07-07
+
+- package was tested locally for publish.
+- removed index.js from /fp directory & build.
+- docs: fixed import names
+
 ## \[0.2.1] - 2021-07-06
 
 added `esbuild` for bundling
@@ -16,6 +22,7 @@ First public release.
 -----------------------------------
 
 ### TODO:
+- adding a clean command & prebuild: clean
 - adding typescript
 - adding husky, lint-staged & commit-lint
 - writing docs
