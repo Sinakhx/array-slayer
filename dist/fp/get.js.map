@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/get.js"],
+  "mappings": "AAAO,GAAM,GAAkB,AAAC,GAAQ,EAAI,OAAO,AAAC,GAAS,CAAC,CAAC,GAClD,EAAiB,AAAC,GAAQ,EAAI,OAAO,AAAC,GAAS,CAAC,GAChD,EAAa,AAAC,GAAQ,OAAO,KAAK",
+  "names": []
+}

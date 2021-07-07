@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/take.js"],
+  "mappings": "AAAO,GAAM,GAAO,CAAC,EAAK,EAAQ,EAAa,IAAM,EAAI,MAAM,EAAY,EAAa",
+  "names": []
+}

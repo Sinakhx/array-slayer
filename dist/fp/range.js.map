@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/range.js"],
+  "mappings": "AACO,GAAM,GAAQ,CAAC,EAAO,IACvB,IAAU,QAAa,IAAQ,OAC1B,MAAM,EAAQ,GAAG,OAAO,IAAI,CAAC,EAAG,IAAU,GAE5C,MAAM,EAAM,EAAQ,GAAG,OAAO,IAAI,CAAC,EAAG,IAAU,EAAQ",
+  "names": []
+}

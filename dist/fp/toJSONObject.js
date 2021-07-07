@@ -1,0 +1,2 @@
+var i=(r=[],e=[])=>{if(!Array.isArray(r)||!Array.isArray(e))throw new Error("'keys' and 'values' must be arrays.");if(r.length!==e.length)throw new Error("array length of 'keys' and 'values' must be the same.");let t={},s=JSON.parse(JSON.stringify(r)),n=JSON.parse(JSON.stringify(e));if(s.length!==n.length)throw new Error("objects' inner values must be of primitive types.");return s.forEach((a,o)=>{t[a]=n[o]}),t};export{i as toJSONObject};
+//# sourceMappingURL=toJSONObject.js.map

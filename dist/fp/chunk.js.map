@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/chunk.js"],
+  "mappings": "AAAO,GAAM,GAAQ,CAAC,EAAM,IAAQ,CAClC,GAAM,GAAM,GACN,EAAQ,KAAK,KAAK,EAAI,OAAS,GACrC,OAAS,GAAI,EAAG,EAAI,EAAO,IACzB,EAAI,KAAK,EAAI,MAAM,EAAI,EAAM,EAAI,EAAO,IAE1C,MAAO",
+  "names": []
+}

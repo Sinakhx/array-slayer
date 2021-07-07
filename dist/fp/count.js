@@ -1,0 +1,2 @@
+var t=new Set(["string","number","boolean","null","undefined","symbol"]),s=e=>isNaN(e)&&typeof e=="number";var l=JSON.stringify,f=JSON.parse;var a=(e,r)=>{let o=0;return e===null?r.forEach(n=>{n===null&&(o+=1)}):s(e)?r.forEach(n=>{s(n)&&(o+=1)}):typeof e=="number"||typeof e=="string"?r.forEach(n=>{n===e&&(o+=1)}):r.forEach(n=>{JSON.stringify(e)===JSON.stringify(n)&&(o+=1)}),o};export{a as count};
+//# sourceMappingURL=count.js.map

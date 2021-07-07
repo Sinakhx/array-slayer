@@ -1,0 +1,2 @@
+var s=(n=[],e=[])=>{if(n.length!==3)throw new Error('left array length must be 3, representing the "starting", "middle" & "final" values respectively.');if(e.length!==3||![void 0,null,!1,"x","X","?"].includes(e[1]))throw new Error("right array length must be 3, representing the [$starting_value, undefined, $final_value].");let[l,i,t]=n,[a,,r]=e;return r-(r-a)*(t-i)/(t-l)};export{s as interpolate};
+//# sourceMappingURL=interpolate.js.map

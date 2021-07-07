@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/readOnly.js"],
+  "mappings": "AAAA,mBAA4B,MAAM,CAChC,YAAY,EAAS,CACnB,MAAM,GACN,KAAK,KAAK,GAAG,GACb,OAAO,OAAO,iBAEJ,OAAO,UAAW,CAC5B,MAAO,SAIE,EAAW,AAAC,GAAQ,GAAI,GAAc",
+  "names": []
+}

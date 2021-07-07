@@ -1,0 +1,2 @@
+var r=n=>[...new Set(n)],y=(n,s=[])=>{let e=[];if(typeof n=="function"&&(e=s.map(n)),typeof n=="string"){let t=n.split(".");e=s.map(i=>t.reduce((d,l)=>d[l],i))}if(typeof n!="function"&&typeof n!="string")throw new Error("iteratee has to be either of type 'string' or 'function'");let o=e.slice().sort(),u=[];for(let t=0;t<o.length-1;t++)o[t+1]==o[t]&&u.push(o[t]);let f=new Set(u),p=e.map((t,i)=>f.has(t)?void 0:i),c=new Set(p);return c.delete(void 0),[...c].map(t=>s[t])};export{r as unique,y as uniqueBy};
+//# sourceMappingURL=unique.js.map

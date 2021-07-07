@@ -1,0 +1,2 @@
+var c=new Set(["string","number","boolean","null","undefined","symbol"]),i=e=>isNaN(e)&&typeof e=="number";var f=JSON.stringify,h=JSON.parse;var S=(e=[],s,r=n=>n)=>{let n=[];if(i(s)||!c.has(typeof s)){let t=JSON.stringify(s);e.map(r).forEach((o,a)=>{JSON.stringify(o)===t&&n.push(a)})}else e.map(r).forEach((t,o)=>{t===s&&n.push(o)});return n};export{S as findAllOccurences};
+//# sourceMappingURL=findAllOccurences.js.map

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/random.js"],
+  "mappings": "AAAO,GAAM,GAAS,AAAC,GAAQ,EAAI,KAAK,MAAM,KAAK,SAAW,EAAI",
+  "names": []
+}

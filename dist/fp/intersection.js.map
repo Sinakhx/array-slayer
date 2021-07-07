@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/intersection.js"],
+  "mappings": "AACO,GAAM,GAAe,IAAI,IACvB,CAAC,GAAG,GAAQ,OAAO,CAAC,EAAG,IAAM,CAClC,GAAM,GAAO,GAAI,KAAI,GACrB,MAAO,GAAE,OAAO,AAAC,GAAM,EAAK,IAAI",
+  "names": []
+}

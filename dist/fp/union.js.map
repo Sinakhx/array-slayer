@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/union.js"],
+  "mappings": "AACO,GAAM,GAAQ,IAAI,IAAW,CAAC,GAAG,GAAI,KAAI,CAAC,GAAG,EAAO,KAAK",
+  "names": []
+}

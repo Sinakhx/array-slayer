@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/symmetricDifference.js"],
+  "mappings": "AACO,GAAM,GAAsB,CAAC,EAAM,IAAS,CACjD,GAAM,GAAU,GAAI,KAAI,GAClB,EAAU,GAAI,KAAI,GAClB,EAAO,CAAC,GAAG,GAAS,OAAO,AAAC,GAAY,CAAC,EAAQ,IAAI,IACrD,EAAQ,CAAC,GAAG,GAAS,OAAO,AAAC,GAAY,CAAC,EAAQ,IAAI,IAC5D,MAAO,GAAK,OAAO",
+  "names": []
+}
