@@ -8,7 +8,7 @@ With the array-slayer utility library you have:
 
 ## Example usage
 ```js
-import _ from "lib/src/arraySlayer.js";
+import _ from "arraySlayer";
 
 const array = [
     [47,25,1,{ a: "Foo2", b: "Bar1", c: { d: "ct", e: { f: 9 }, g: 1 } }],
@@ -31,7 +31,7 @@ console.log(result); //-> [2, 5, 7, 9, 17, 18, 100]
 of if you need a single method from arraySlayer, you can import it as a seperate module:
 
 ```js
-import { sort } from "lib/src/fp/sort.js";
+import { sort } from "array-slayer/sort.js";
 
 const result = sort(array, { sortType: "MergeSort", sortBy: item => item[3].c.d });
 
