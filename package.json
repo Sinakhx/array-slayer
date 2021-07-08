@@ -9,7 +9,7 @@
     "./": "./dist/fp/"
   },
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf dist node_modules && npm i",
     "prebuild": "npm run clean",
     "build": "node lib/utils/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
