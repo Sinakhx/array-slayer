@@ -1,5 +1,9 @@
 # array-slayer changes
 
+## \[0.2.3] - 2021-07-08
+
+added `clean` & `prebuild` commands to package.json
+
 ## \[0.2.2] - 2021-07-07
 
 - package was tested locally for publish.
