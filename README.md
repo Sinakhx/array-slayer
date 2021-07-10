@@ -114,16 +114,17 @@ console.log(result); // -> false
 
 #### **OR_AND**
 
-ORs all elements of the given array (& optional argument)
+ANDs all elements of the given array & ORs the result with the given argument
 
 ```js
 import B from "array-slayer/booleans.js";
 
+const flag = true;
 const array = [1, 2, 3, 0];
 
 // B([a, b, c]).OR_AND(bool) =>  (a || bool) && (b || bool) && (c || bool)
-const result = B(array).OR_AND();
-console.log(result); // -> false
+const result = B(array).OR_AND(flag);
+console.log(result); // -> true
 ```
 
 **[⬆ back to top](#quick-links)**
