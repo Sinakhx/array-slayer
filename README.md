@@ -42,6 +42,7 @@ console.log(result); // returns sorted array based on the selected keys
 ## Quick Links
 1. [booleans](#booleans)
     - [AND_ALL](#andall)
+    - [AND_OR](#andor)
     - [OR_ALL](#orall)
     - [OR_AND](#orand)
 1. [chunk](#chunk)
@@ -96,6 +97,23 @@ console.log(result); // -> true
 
 **[⬆ back to top](#quick-links)**
 
+#### **AND_OR**
+
+ORs all elements of the given array & ANDs the result with an optional argument
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = false;
+const array = [1, 2, 3, true, {}];
+
+// B([a, b, c]).AND_OR(bool) => (a && bool) || (b && bool) || (c && bool)
+const result = B(array).AND_OR();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
 #### **OR_ALL**
 
 ORs all elements of the given array (& optional argument)
@@ -114,7 +132,7 @@ console.log(result); // -> false
 
 #### **OR_AND**
 
-ANDs all elements of the given array & ORs the result with the given argument
+ANDs all elements of the given array & ORs the result with  an optional argument
 
 ```js
 import B from "array-slayer/booleans.js";
@@ -122,7 +140,7 @@ import B from "array-slayer/booleans.js";
 const flag = true;
 const array = [1, 2, 3, 0];
 
-// B([a, b, c]).OR_AND(bool) =>  (a || bool) && (b || bool) && (c || bool)
+// B([a, b, c]).OR_AND(bool) => (a || bool) && (b || bool) && (c || bool)
 const result = B(array).OR_AND(flag);
 console.log(result); // -> true
 ```
