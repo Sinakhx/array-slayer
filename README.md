@@ -206,6 +206,7 @@ can also check if two arrays of the same length, have at least one common item w
 
 ```js
 import B from "array-slayer/booleans.js";
+// or 'import B from "array-slayer";' alternatively
 
 const array1 = [-1, 5, 2, true];
 const array2 = [-1, 1, 7, false];
@@ -272,6 +273,28 @@ const array = [1, 2, 3, 0];
 
 const result = B(array).XOR_ALL();
 console.log(result); // -> 0
+```
+
+**[⬆ back to top](#quick-links)**
+
+## chunk
+
+```js
+import { chunk } from "array-slayer/chunk.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = chunk(3, array)
+console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = _(array).chunk(3);
+console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 ```
 
 **[⬆ back to top](#quick-links)**
