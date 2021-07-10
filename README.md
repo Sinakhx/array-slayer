@@ -4,8 +4,9 @@ With the array-slayer utility library you have:
 
 - smooth experice of functional programming tackling daily problems with arrays.
 - faster development speed by letting array-slayer solve usual problems for you.
-- much more readable & consice code for reviewing.
 - ability to chain methods or import a single method as a seperate module.
+- much more readable & consice code for reviewing.
+- lightweight: only about ~16kbs (full-featured bundle)
 
 ## Example usage
 ```js
