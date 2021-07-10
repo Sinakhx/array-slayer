@@ -45,6 +45,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [AND](#and)
     - [AND_ALL](#andall)
     - [AND_OR](#andor)
+    - [OR](#or)
     - [OR_ALL](#orall)
     - [OR_AND](#orand)
     - [XOR_ALL](#xorall)
@@ -85,7 +86,7 @@ console.log(result); // returns sorted array based on the selected keys
 
 #### **AND**
 
-can check if every single item in array is equal to a constant
+can check if every single item in array is equal to the given constant
 
 ```js
 import B from "array-slayer/booleans.js";
@@ -129,8 +130,8 @@ can also check if a function passes on each elements of the two arrays of the sa
 ```js
 import B from "array-slayer/booleans.js";
 
-const array1 = [-3, 5, 2, 8];
-const array2 = [-1, 4, 1, 7];
+const array1 = [-1, 5, 2, 8];
+const array2 = [-3, 4, 1, 7];
 
 // B([a, b, c]).AND([e, f, g], fn) => (fn(a,e)) && (fn(b,f)) && (fn(c,g))
 const result = B(array1).AND(array2, (a,b) => a > b);
@@ -168,6 +169,62 @@ const array = [1, 2, 3, true, {}];
 
 // B([a, b, c]).AND_OR(bool) => (a && bool) || (b && bool) || (c && bool)
 const result = B(array).AND_OR();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **OR**
+
+can check if at least one item in array is equal to the given constant
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = true;
+const array = [false, false, false, true];
+
+// B([a, b, c]).OR(flag) => (a === flag) || (b === flag) || (c === flag)
+const result = B(array).OR(flag);
+console.log(result); // -> true
+```
+
+can also check if a filter function passes on at least one item in an array
+
+```js
+import B from "array-slayer/booleans.js";
+
+const id = 18;
+const array = [40, 50, 2, 60];
+
+// B([a, b, c]).OR(item, fn) => (fn(a, item)) || (fn(b, item)) || (fn(c, item))
+const result = B(array).OR(id, item => item < id);
+console.log(result); // -> true
+```
+
+can also check if two arrays of the same length, have at least one common item with the same index
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [-1, 5, 2, true];
+const array2 = [-1, 1, 7, false];
+
+// B([a, b, c]).OR([e, f, g]) => (a === e) || (b === f) || (c === g)
+const result = B(array1).OR(array2);
+console.log(result); // -> true
+```
+
+can also check if a function passes at least one of the respective elements of the two arrays of the same length
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [70, 1, 2, 8];
+const array2 = [-3, 4, 1, 7];
+
+// B([a, b, c]).OR([e, f, g], fn) => (fn(a,e)) || (fn(b,f)) || (fn(c,g))
+const result = B(array1).OR(array2, (a,b) => a < b);
 console.log(result); // -> true
 ```
 
