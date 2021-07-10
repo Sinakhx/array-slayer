@@ -74,23 +74,35 @@ console.log(result); // returns sorted array based on the selected keys
 
 **[⬆ back to top](#quick-links)**
 
-# booleans
+**AND_ALL**
+
+ANDs all elements of the given array (& optional argument)
 
 ```js
 import B from "array-slayer/booleans.js";
 
 let flag = true;
 const array = [1, true, {}, "name"];
-```
 
-**AND_ALL**
-
-ANDs all elements of the given array (& optional argument)
-
-```js
 // B([a, b, c]).AND_ALL(bool) => (a && bool) && (b && bool) && (c && bool)
 const result = B(array).AND_ALL(flag);
 console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+**OR_ALL**
+
+ORs all elements of the given array (& optional argument)
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array = [1, 2, 3, 0];
+
+// B([a, b, c]).OR_ALL(bool) => (a || bool) && (b || bool) && (c || bool)
+const result = B(array).OR_ALL();
+console.log(result); // -> false
 ```
 
 **[⬆ back to top](#quick-links)**
