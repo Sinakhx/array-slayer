@@ -41,6 +41,8 @@ console.log(result); // returns sorted array based on the selected keys
 
 ## Quick Links
 1. [booleans](#booleans)
+    - [AND_ALL](#andall)
+    - [OR_ALL](#orall)
 1. [chunk](#chunk)
 1. [clear](#clear)
 1. [column](#column)
@@ -76,7 +78,7 @@ console.log(result); // returns sorted array based on the selected keys
 
 ## booleans
 
-**AND_ALL**
+#### **AND_ALL**
 
 ANDs all elements of the given array (& optional argument)
 
@@ -93,7 +95,7 @@ console.log(result); // -> true
 
 **[⬆ back to top](#quick-links)**
 
-**OR_ALL**
+#### **OR_ALL**
 
 ORs all elements of the given array (& optional argument)
 
