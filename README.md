@@ -41,6 +41,7 @@ console.log(result); // returns sorted array based on the selected keys
 
 ## Quick Links
 1. [booleans](#booleans)
+    - [AND](#and)
     - [AND_ALL](#andall)
     - [AND_OR](#andor)
     - [OR_ALL](#orall)
@@ -80,6 +81,62 @@ console.log(result); // returns sorted array based on the selected keys
 **[⬆ back to top](#quick-links)**
 
 ## booleans
+
+#### **AND**
+
+can check if every single item in array is equal to a constant
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = true;
+const array = [true, true, true, true];
+
+// B([a, b, c]).AND(flag) => (a === flag) && (b === flag) && (c === flag)
+const result = B(array).AND(flag);
+console.log(result); // -> true
+```
+
+can also check if a filter function passes on every single item in an array
+
+```js
+import B from "array-slayer/booleans.js";
+
+const id = 18;
+const array = [-1, 5, 2, 4];
+
+// B([a, b, c]).AND(item, fn) => (fn(a, item)) && (fn(b, item)) && (fn(c, item))
+const result = B(array).AND(id, item => item < id);
+console.log(result); // -> true
+```
+
+can also check if two arrays of the same length, have the same items in the same order
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [-1, 5, 2, true];
+const array2 = [-1, 5, 2, false];
+
+// B([a, b, c]).AND([e, f, g]) => (a === e) && (b === f) && (c === g)
+const result = B(array1).AND(array2);
+console.log(result); // -> false
+```
+
+can also check if a function passes on each elements of the two arrays of the same length, respectively
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [-3, 5, 2, 8];
+const array2 = [-1, 4, 1, 7];
+
+// B([a, b, c]).AND([e, f, g], fn) => (fn(a,e)) && (fn(b,f)) && (fn(c,g))
+const result = B(array1).AND(array2, (a,b) => a > b);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
 
 #### **AND_ALL**
 
