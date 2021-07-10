@@ -73,6 +73,28 @@ console.log(result); // returns sorted array based on the selected keys
 1. [x](#x)
 
 **[⬆ back to top](#quick-links)**
+
+# booleans
+
+```js
+import B from "array-slayer/booleans.js";
+
+let flag = true;
+const array = [1, true, {}, "name"];
+```
+
+**AND_ALL**
+
+ANDs all elements of the given array (& optional argument)
+
+```js
+// B([a, b, c]).AND_ALL(bool) => (a && bool) && (b && bool) && (c && bool)
+const result = B(array).AND_ALL(flag);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
 ## License
 
 The [MIT License][license-url] (MIT)
