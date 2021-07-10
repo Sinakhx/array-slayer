@@ -43,6 +43,7 @@ console.log(result); // returns sorted array based on the selected keys
 1. [booleans](#booleans)
     - [AND_ALL](#andall)
     - [OR_ALL](#orall)
+    - [OR_AND](#orand)
 1. [chunk](#chunk)
 1. [clear](#clear)
 1. [column](#column)
@@ -106,6 +107,22 @@ const array = [1, 2, 3, 0];
 
 // B([a, b, c]).OR_ALL(bool) => (a || bool) && (b || bool) && (c || bool)
 const result = B(array).OR_ALL();
+console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **OR_AND**
+
+ORs all elements of the given array (& optional argument)
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array = [1, 2, 3, 0];
+
+// B([a, b, c]).OR_AND(bool) =>  (a || bool) && (b || bool) && (c || bool)
+const result = B(array).OR_AND();
 console.log(result); // -> false
 ```
 
