@@ -283,7 +283,7 @@ console.log(result); // -> 0
 import { chunk } from "array-slayer/chunk.js";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = chunk(3, array)
+const result = chunk(3, array);
 console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 ```
 
@@ -295,6 +295,30 @@ import _ from "array-slayer";
 const array = [1,2,9,7,8,6,2,6,2];
 const result = _(array).chunk(3);
 console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
+```
+
+**[⬆ back to top](#quick-links)**
+
+## clear
+
+empties an array (mutates the original array, keeping its reference)
+
+```js
+import { clear } from "array-slayer/clear.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = clear(array);
+console.log(result); // -> []
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = _(array).clear();
+console.log(result); // -> []
 ```
 
 **[⬆ back to top](#quick-links)**
