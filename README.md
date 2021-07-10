@@ -4,8 +4,9 @@ With the array-slayer utility library you have:
 
 - smooth experice of functional programming tackling daily problems with arrays.
 - faster development speed by letting array-slayer solve usual problems for you.
-- much more readable & consice code for reviewing.
 - ability to chain methods or import a single method as a seperate module.
+- much more readable & consice code for reviewing.
+- lightweight: only about ~16kbs (full-featured bundle)
 
 ## Example usage
 ```js
@@ -41,6 +42,13 @@ console.log(result); // returns sorted array based on the selected keys
 
 ## Quick Links
 1. [booleans](#booleans)
+    - [AND](#and)
+    - [AND_ALL](#andall)
+    - [AND_OR](#andor)
+    - [OR](#or)
+    - [OR_ALL](#orall)
+    - [OR_AND](#orand)
+    - [XOR_ALL](#xorall)
 1. [chunk](#chunk)
 1. [clear](#clear)
 1. [column](#column)
@@ -76,7 +84,63 @@ console.log(result); // returns sorted array based on the selected keys
 
 ## booleans
 
-**AND_ALL**
+#### **AND**
+
+can check if every single item in array is equal to the given constant
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = true;
+const array = [true, true, true, true];
+
+// B([a, b, c]).AND(flag) => (a === flag) && (b === flag) && (c === flag)
+const result = B(array).AND(flag);
+console.log(result); // -> true
+```
+
+can also check if a filter function passes on every single item in an array
+
+```js
+import B from "array-slayer/booleans.js";
+
+const id = 18;
+const array = [-1, 5, 2, 4];
+
+// B([a, b, c]).AND(item, fn) => (fn(a, item)) && (fn(b, item)) && (fn(c, item))
+const result = B(array).AND(id, item => item < id);
+console.log(result); // -> true
+```
+
+can also check if two arrays of the same length, have the same items in the same order
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [-1, 5, 2, true];
+const array2 = [-1, 5, 2, false];
+
+// B([a, b, c]).AND([e, f, g]) => (a === e) && (b === f) && (c === g)
+const result = B(array1).AND(array2);
+console.log(result); // -> false
+```
+
+can also check if a function passes on each elements of the two arrays of the same length, respectively
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [-1, 5, 2, 8];
+const array2 = [-3, 4, 1, 7];
+
+// B([a, b, c]).AND([e, f, g], fn) => (fn(a,e)) && (fn(b,f)) && (fn(c,g))
+const result = B(array1).AND(array2, (a,b) => a > b);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **AND_ALL**
 
 ANDs all elements of the given array (& optional argument)
 
@@ -93,7 +157,81 @@ console.log(result); // -> true
 
 **[⬆ back to top](#quick-links)**
 
-**OR_ALL**
+#### **AND_OR**
+
+ORs all elements of the given array & ANDs the result with an optional argument
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = false;
+const array = [1, 2, 3, true, {}];
+
+// B([a, b, c]).AND_OR(bool) => (a && bool) || (b && bool) || (c && bool)
+const result = B(array).AND_OR();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **OR**
+
+can check if at least one item in array is equal to the given constant
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = true;
+const array = [false, false, false, true];
+
+// B([a, b, c]).OR(flag) => (a === flag) || (b === flag) || (c === flag)
+const result = B(array).OR(flag);
+console.log(result); // -> true
+```
+
+can also check if a filter function passes on at least one item in an array
+
+```js
+import B from "array-slayer/booleans.js";
+
+const id = 18;
+const array = [40, 50, 2, 60];
+
+// B([a, b, c]).OR(item, fn) => (fn(a, item)) || (fn(b, item)) || (fn(c, item))
+const result = B(array).OR(id, item => item < id);
+console.log(result); // -> true
+```
+
+can also check if two arrays of the same length, have at least one common item with the same index
+
+```js
+import B from "array-slayer/booleans.js";
+// or 'import B from "array-slayer";' alternatively
+
+const array1 = [-1, 5, 2, true];
+const array2 = [-1, 1, 7, false];
+
+// B([a, b, c]).OR([e, f, g]) => (a === e) || (b === f) || (c === g)
+const result = B(array1).OR(array2);
+console.log(result); // -> true
+```
+
+can also check if a function passes at least one of the respective elements of the two arrays of the same length
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array1 = [70, 1, 2, 8];
+const array2 = [-3, 4, 1, 7];
+
+// B([a, b, c]).OR([e, f, g], fn) => (fn(a,e)) || (fn(b,f)) || (fn(c,g))
+const result = B(array1).OR(array2, (a,b) => a < b);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **OR_ALL**
 
 ORs all elements of the given array (& optional argument)
 
@@ -105,6 +243,82 @@ const array = [1, 2, 3, 0];
 // B([a, b, c]).OR_ALL(bool) => (a || bool) && (b || bool) && (c || bool)
 const result = B(array).OR_ALL();
 console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **OR_AND**
+
+ANDs all elements of the given array & ORs the result with  an optional argument
+
+```js
+import B from "array-slayer/booleans.js";
+
+const flag = true;
+const array = [1, 2, 3, 0];
+
+// B([a, b, c]).OR_AND(bool) => (a || bool) && (b || bool) && (c || bool)
+const result = B(array).OR_AND(flag);
+console.log(result); // -> true
+```
+
+#### **XOR_ALL**
+
+XORs all elements of the given array (& optional argument)
+
+```js
+import B from "array-slayer/booleans.js";
+
+const array = [1, 2, 3, 0];
+
+const result = B(array).XOR_ALL();
+console.log(result); // -> 0
+```
+
+**[⬆ back to top](#quick-links)**
+
+## chunk
+
+```js
+import { chunk } from "array-slayer/chunk.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = chunk(3, array);
+console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = _(array).chunk(3);
+console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
+```
+
+**[⬆ back to top](#quick-links)**
+
+## clear
+
+empties an array (mutates the original array, keeping its reference)
+
+```js
+import { clear } from "array-slayer/clear.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = clear(array);
+console.log(result); // -> []
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = _(array).clear();
+console.log(result); // -> []
 ```
 
 **[⬆ back to top](#quick-links)**
