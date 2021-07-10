@@ -74,6 +74,8 @@ console.log(result); // returns sorted array based on the selected keys
 
 **[⬆ back to top](#quick-links)**
 
+## booleans
+
 **AND_ALL**
 
 ANDs all elements of the given array (& optional argument)
