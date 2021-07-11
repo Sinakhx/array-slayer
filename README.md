@@ -295,7 +295,7 @@ or
 import _ from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).chunk(3);
+const result = _(array).chunk(3).value;
 console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 ```
 
@@ -319,7 +319,7 @@ or
 import _ from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).clear();
+const result = _(array).clear().value;
 console.log(result); // -> []
 ```
 
@@ -343,7 +343,7 @@ or
 import _ from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).clearByIndexes(0, 2, 3);
+const result = _(array).clearByIndexes(0, 2, 3).value;
 console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
 ```
 
@@ -367,7 +367,7 @@ clearByValues can also compare objects, but it is more costly than clearByIndexe
 import _ from "array-slayer";
 
 const array = [4, {id: 12}, "str", {c: [8, {d: "name"}] }, 24];
-const result = _(array).clearByValues("str", { c: [8, {d: "name"}] });
+const result = _(array).clearByValues("str", { c: [8, {d: "name"}] }).value;
 console.log(result); // -> [4, {id: 12}, undefined, undefined, 24];
 ```
 
