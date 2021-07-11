@@ -373,6 +373,38 @@ console.log(result); // -> [4, {id: 12}, undefined, undefined, 24];
 
 **[⬆ back to top](#quick-links)**
 
+## column
+
+returns the selected column from a 2D array or array of objects
+
+```js
+import { column } from "array-slayer/column.js";
+
+const array = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+];
+const result = column(array, "1");
+console.log(result); // -> [2, 5, 8];
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [4, {id: 1}, "baz", {c: [8, {d: "foo"}], f: { e: 5 } }, 24],
+    [4, {id: 2}, "foo", {c: [8, {d: "bar"}], f: { e: 6 } }, 24],
+    [4, {id: 3}, "bar", {c: [8, {d: "baz"}], f: { e: 7 } }, 24]
+];
+const result = _(array).column(3, "f.e").value;
+console.log(result); // -> [5, 6, 7];
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
