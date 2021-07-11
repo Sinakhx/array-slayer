@@ -52,6 +52,7 @@ console.log(result); // returns sorted array based on the selected keys
 1. [chunk](#chunk)
 1. [clear](#clear)
 1. [clearByIndexes](#clearbyindexes)
+1. [clearByValues](#clearbyvalues)
 1. [column](#column)
 1. [count](#count)
 1. [delete](#delete)
@@ -344,6 +345,30 @@ import _ from "array-slayer";
 const array = [1,2,9,7,8,6,2,6,2];
 const result = _(array).clearByIndexes(0, 2, 3);
 console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
+```
+
+**[⬆ back to top](#quick-links)**
+
+## clearByValues
+
+replaces the given values of the given array by `undefined` (keeps the array length)
+
+```js
+import { clearByValues } from "array-slayer/clearByValues.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = clearByValues(array, 1, 6, 8);
+console.log(result); // -> [undefined,2,9,7,undefined,undefined,2,undefined,2];
+```
+
+clearByValues can also compare objects, but it is more costly than clearByIndexes
+
+```js
+import _ from "array-slayer";
+
+const array = [4, {id: 12}, "str", {c: [8, {d: "name"}] }, 24];
+const result = _(array).clearByValues("str", { c: [8, {d: "name"}] });
+console.log(result); // -> [4, {id: 12}, undefined, undefined, 24];
 ```
 
 **[⬆ back to top](#quick-links)**
