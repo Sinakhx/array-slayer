@@ -51,6 +51,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [XOR_ALL](#xorall)
 1. [chunk](#chunk)
 1. [clear](#clear)
+1. [clearByIndexes](#clearbyindexes)
 1. [column](#column)
 1. [count](#count)
 1. [delete](#delete)
@@ -322,6 +323,32 @@ console.log(result); // -> []
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## clearByIndexes
+
+replaces the values of the given indexes by `undefined` (keeps the array length)
+
+```js
+import { clearByIndexes } from "array-slayer/clearByIndexes.js";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = clearByIndexes(array, 0, 2, 3);
+console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,9,7,8,6,2,6,2];
+const result = _(array).clearByIndexes(0, 2, 3);
+console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
+```
+
+**[⬆ back to top](#quick-links)**
+
+____________________________________
 
 ## License
 
