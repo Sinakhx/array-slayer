@@ -405,6 +405,34 @@ console.log(result); // -> [5, 6, 7];
 
 **[⬆ back to top](#quick-links)**
 
+## count
+
+returns how many times an item is repeated in an array
+
+```js
+import { count } from "array-slayer/count.js";
+
+const array = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+];
+const result = count(array, [4,5,6]);
+console.log(result); // -> 1
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,1,5,1,8];
+const result = _(array).count(1);
+console.log(result); // -> 3
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
