@@ -508,6 +508,30 @@ console.log(result); // -> [6, 4, 1]
 
 **[⬆ back to top](#quick-links)**
 
+## findAllOccurences
+
+returns the indexes of all occurences of the selected item in array (by value)
+
+```js
+import { findAllOccurences } from "array-slayer/findAllOccurences.js";
+
+const array = [5,6,5,5,1,7,8,5];
+const result = findAllOccurences(5);
+console.log(result); // -> [0, 2, 3, 7]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5,6,5,5,1,7,8,5];
+const result = _(array).findAllOccurences(5).value;
+console.log(result); // -> [0, 2, 3, 7]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
