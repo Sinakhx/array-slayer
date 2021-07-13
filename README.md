@@ -458,6 +458,30 @@ console.log(result); // -> [6,1]
 
 **[⬆ back to top](#quick-links)**
 
+## deleteByValues
+
+removes array items by the given array values (changes the array length)
+
+```js
+import { deleteByValues } from "array-slayer/deleteByValues.js";
+
+const array = [5,6,8,4,1];
+const result = deleteByValues(array, 5, 8, 4);
+console.log(result); // -> [6,1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5,6,8,4,1];
+const result = _(array).deleteByValues(5, 8, 4).value;
+console.log(result); // -> [6,1]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
