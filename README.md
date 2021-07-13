@@ -482,6 +482,32 @@ console.log(result); // -> [6,1]
 
 **[⬆ back to top](#quick-links)**
 
+## difference
+
+returns an array including the first array's values excluding the second array's values
+
+```js
+import { difference } from "array-slayer/difference.js";
+
+const array1 = [5,6,8,4,1];
+const array2 = [7,8,9,5,3];
+const result = difference(array1, array2);
+console.log(result); // -> [6, 4, 1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array1 = [5,6,8,4,1];
+const array2 = [7,8,9,5,3];
+const result = _(array1).difference(array2).value;
+console.log(result); // -> [6, 4, 1]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
