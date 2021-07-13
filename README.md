@@ -532,6 +532,30 @@ console.log(result); // -> [0, 2, 3, 7]
 
 **[⬆ back to top](#quick-links)**
 
+## findDuplicates
+
+returns the duplicate values in array
+
+```js
+import { findDuplicates } from "array-slayer/findDuplicates.js";
+
+const array = [5,6,5,5,1,7,8,5];
+const result = findDuplicates(array);
+console.log(result); // -> [5]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5,6,5,5,1,7,8,5];
+const result = _(array).findDuplicates(array).value;
+console.log(result); // -> [5]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
