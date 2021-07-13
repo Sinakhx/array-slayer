@@ -55,7 +55,8 @@ console.log(result); // returns sorted array based on the selected keys
 1. [clearByValues](#clearbyvalues)
 1. [column](#column)
 1. [count](#count)
-1. [delete](#delete)
+1. [deleteByIndexes](#deletebyindexes)
+1. [deleteByValues](#deletebyvalues)
 1. [difference](#difference)
 1. [findAllOccurences](#findAllOccurences)
 1. [findDuplicates](#findDuplicates)
@@ -429,6 +430,30 @@ import _ from "array-slayer";
 const array = [1,2,1,5,1,8];
 const result = _(array).count(1);
 console.log(result); // -> 3
+```
+
+**[⬆ back to top](#quick-links)**
+
+## deleteByIndexes
+
+removes array items by the given array indexes (changes the array length)
+
+```js
+import { deleteByIndexes } from "array-slayer/deleteByIndexes.js";
+
+const array = [5,6,8,4,1];
+const result = deleteByIndexes(array, 0, 2, 3);
+console.log(result); // -> [6,1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5,6,8,4,1];
+const result = _(array).deleteByIndexes(0, 2, 3).value;
+console.log(result); // -> [6,1]
 ```
 
 **[⬆ back to top](#quick-links)**
