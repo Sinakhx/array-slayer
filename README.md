@@ -819,6 +819,30 @@ console.log(result); // -> false
 
 **[⬆ back to top](#quick-links)**
 
+#### **hasFalse**
+
+returns true if array includes `false` boolean
+
+```js
+import { hasFalse } from "array-slayer/has.js";
+
+const array = [[],{},3,false,3];
+const result = hasFalse(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [[],{},0,null,undefined];
+const result = _(array).hasFalse();
+console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
