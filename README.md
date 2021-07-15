@@ -656,7 +656,7 @@ console.log(result); // -> true
 #### **hasAll**
 
 ```js
-import { hasAll } from "array-slayer/hasAll.js";
+import { hasAll } from "array-slayer/has.js";
 
 const array = [1,2,3,4,5];
 const result = hasAll(array, [2,4,5]);
@@ -670,6 +670,28 @@ import _ from "array-slayer";
 
 const array = [1,2,3,4,5];
 const result = _(array).hasAll([2,4,5]);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasAllTypes**
+
+```js
+import { hasAllTypes } from "array-slayer/has.js";
+
+const array = ["foo",false,3,4,5];
+const result = hasAllTypes(array, ["string", "boolean", "number"]);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = ["foo",false,3,4,5];
+const result = _(array).hasAllTypes(["string", "boolean", "number"]);
 console.log(result); // -> true
 ```
 
