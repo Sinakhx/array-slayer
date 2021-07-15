@@ -61,6 +61,9 @@ console.log(result); // returns sorted array based on the selected keys
 1. [findAllOccurences](#findAllOccurences)
 1. [findDuplicates](#findDuplicates)
 1. [get](#get)
+    - [getTruthyValues](#gettruthyvalues)
+    - [getFalsyValues](#getfalsyvalues)
+    - [getAllKeys](#getallkeys)
 1. [has](#has)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
@@ -556,6 +559,73 @@ console.log(result); // -> [5]
 
 **[⬆ back to top](#quick-links)**
 
+## get
+
+#### **getTruthyValues**
+
+```js
+import { getTruthyValues } from "array-slayer/getTruthyValues.js";
+
+const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
+const result = getTruthyValues(array);
+console.log(result); // -> [4, true, 1, "", "name", {}, [], f()];
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
+const result = _(array).getTruthyValues(array).value;
+console.log(result); // -> [4, true, 1, "", "name", {}, [], f()];
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **getFalsyValues**
+
+```js
+import { getFalsyValues } from "array-slayer/getFalsyValues.js";
+
+const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
+const result = getFalsyValues(array);
+console.log(result); // -> [false, 0];
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
+const result = _(array).getFalsyValues(array).value;
+console.log(result); // -> [false, 0];
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **getAllKeys**
+
+```js
+import { getAllKeys } from "array-slayer/getAllKeys.js";
+
+const array = [{id: 12, name: "foo", lastName: "bar"}];
+const result = getAllKeys(array[0]);
+console.log(result); // -> ["id", "name", "foo", "lastName"];
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [{id: 12, name: "foo", lastName: "bar"}];
+const result = _(array).getAllKeys(array[0]).value;
+console.log(result); // -> ["id", "name", "foo", "lastName"];
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
