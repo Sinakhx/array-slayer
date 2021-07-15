@@ -65,6 +65,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [getFalsyValues](#getfalsyvalues)
     - [getAllKeys](#getallkeys)
 1. [has](#has)
+    - [has](#has)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -623,6 +624,30 @@ import _ from "array-slayer";
 const array = [{id: 12, name: "foo", lastName: "bar"}];
 const result = _(array).getAllKeys(array[0]).value;
 console.log(result); // -> ["id", "name", "foo", "lastName"];
+```
+
+**[⬆ back to top](#quick-links)**
+
+## has
+
+#### **has**
+
+```js
+import { has } from "array-slayer/has.js";
+
+const array = [1,2,3,4,5];
+const result = has(array, 3);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [{id: 12, name: "foo", lastName: "bar"}];
+const result = _(array).has({id: 12, name: "foo", lastName: "bar"});
+console.log(result); // -> true
 ```
 
 **[⬆ back to top](#quick-links)**
