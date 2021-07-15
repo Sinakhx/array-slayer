@@ -70,6 +70,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasAllTypes](#hasalltypes)
     - [hasArray](#hasarray)
     - [hasBoolean](#hasboolean)
+    - [hasDuplicates](#hasduplicates)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -739,6 +740,30 @@ import _ from "array-slayer";
 
 const array = [[],false,3,4,5];
 const result = _(array).hasBoolean();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasDuplicates**
+
+returns true if array has duplicate values
+
+```js
+import { hasDuplicates } from "array-slayer/has.js";
+
+const array = [[],false,3,3,3];
+const result = hasDuplicates(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [{id: 12},{id: 12},3,4,5];
+const result = _(array).hasDuplicates();
 console.log(result); // -> true
 ```
 
