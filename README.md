@@ -67,6 +67,8 @@ console.log(result); // returns sorted array based on the selected keys
 1. [has](#has)
     - [has](#has)
     - [hasAll](#hasall)
+    - [hasAllTypes](#hasalltypes)
+    - [hasArray](#hasarray)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -692,6 +694,28 @@ import _ from "array-slayer";
 
 const array = ["foo",false,3,4,5];
 const result = _(array).hasAllTypes(["string", "boolean", "number"]);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasArray**
+
+```js
+import { hasArray } from "array-slayer/has.js";
+
+const array = ["foo", false, {id: 2}, 4, [1, {name: "foo"}],5];
+const result = hasArray(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [[],false,3,4,5];
+const result = _(array).hasArray();
 console.log(result); // -> true
 ```
 
