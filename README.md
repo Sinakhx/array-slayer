@@ -71,6 +71,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasArray](#hasarray)
     - [hasBoolean](#hasboolean)
     - [hasDuplicates](#hasduplicates)
+    - [hasEmptyArr](#hasemptyarr)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -765,6 +766,30 @@ import _ from "array-slayer";
 const array = [{id: 12},{id: 12},3,4,5];
 const result = _(array).hasDuplicates();
 console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasEmptyArr**
+
+returns true if array includes an empty array ([])
+
+```js
+import { hasEmptyArr } from "array-slayer/has.js";
+
+const array = [[],false,3,3,3];
+const result = hasEmptyArr(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [{id: 12},[18],3,4,5];
+const result = _(array).hasEmptyArr();
+console.log(result); // -> false
 ```
 
 **[⬆ back to top](#quick-links)**
