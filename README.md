@@ -66,6 +66,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [getAllKeys](#getallkeys)
 1. [has](#has)
     - [has](#has)
+    - [hasAll](#hasall)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -651,6 +652,29 @@ console.log(result); // -> true
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **hasAll**
+
+```js
+import { hasAll } from "array-slayer/hasAll.js";
+
+const array = [1,2,3,4,5];
+const result = hasAll(array, [2,4,5]);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1,2,3,4,5];
+const result = _(array).hasAll([2,4,5]);
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
