@@ -77,6 +77,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasFalsy](#hasfalsy)
     - [hasNaN](#hasnan)
     - [hasNull](#hasnull)
+    - [hasNullish](#hasnullish)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -914,6 +915,30 @@ import _ from "array-slayer";
 
 const array = [0,NaN,1,null,5];
 const result = _(array).hasNull();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasNullish**
+
+returns true if array includes `null` or `undefined`
+
+```js
+import { hasNullish } from "array-slayer/has.js";
+
+const array = [[],{},0, NaN, undefined, false];
+const result = hasNullish(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,1,undefined,5];
+const result = _(array).hasNullish();
 console.log(result); // -> true
 ```
 
