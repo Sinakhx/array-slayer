@@ -81,6 +81,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasNumber](#hasnumber)
     - [hasObject](#hasobject)
     - [hasTrue](#hastrue)
+    - [hasTruthy](#hastruthy)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -1015,6 +1016,30 @@ import _ from "array-slayer";
 const array = [0,NaN,1,true,5];
 const result = _(array).hasTrue();
 console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasTruthy**
+
+returns true if array includes a truthy value
+
+```js
+import { hasTruthy } from "array-slayer/has.js";
+
+const array = [1, 5, null, undefined, false];
+const result = hasTruthy(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,null,undefined,false];
+const result = _(array).hasTruthy();
+console.log(result); // -> false
 ```
 
 **[⬆ back to top](#quick-links)**
