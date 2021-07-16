@@ -75,6 +75,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasEmptyObj](#hasemptyobj)
     - [hasFalse](#hasfalse)
     - [hasFalsy](#hasfalsy)
+    - [hasNaN](#hasnan)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -847,7 +848,7 @@ console.log(result); // -> false
 
 #### **hasFalsy**
 
-returns true if array includes a falsy value (0, null, undefined, false, ...)
+returns true if array includes a falsy value (`0`, `null`, `undefined`, `false`, ...)
 
 ```js
 import { hasFalsy } from "array-slayer/has.js";
@@ -864,6 +865,30 @@ import _ from "array-slayer";
 
 const array = [[],{},1,null,5];
 const result = _(array).hasFalsy();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasNaN**
+
+returns true if array includes a `NaN`
+
+```js
+import { hasNaN } from "array-slayer/has.js";
+
+const array = [[],{},0, null, undefined, false];
+const result = hasNaN(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,1,null,5];
+const result = _(array).hasNaN();
 console.log(result); // -> true
 ```
 
