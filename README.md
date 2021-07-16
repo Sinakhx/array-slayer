@@ -78,6 +78,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasNaN](#hasnan)
     - [hasNull](#hasnull)
     - [hasNullish](#hasnullish)
+    - [hasNumber](#hasnumber)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -939,6 +940,30 @@ import _ from "array-slayer";
 
 const array = [0,NaN,1,undefined,5];
 const result = _(array).hasNullish();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasNumber**
+
+returns true if array includes an item of type `"number"`
+
+```js
+import { hasNumber } from "array-slayer/has.js";
+
+const array = [[],{},function(){}, null, undefined, false];
+const result = hasNumber(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,1,undefined,5];
+const result = _(array).hasNumber();
 console.log(result); // -> true
 ```
 
