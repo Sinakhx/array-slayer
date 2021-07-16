@@ -73,6 +73,8 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasDuplicates](#hasduplicates)
     - [hasEmptyArr](#hasemptyarr)
     - [hasEmptyObj](#hasemptyobj)
+    - [hasFalse](#hasfalse)
+    - [hasFalsy](#hasfalsy)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -839,6 +841,30 @@ import _ from "array-slayer";
 const array = [[],{},0,null,undefined];
 const result = _(array).hasFalse();
 console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasFalsy**
+
+returns true if array includes a falsy value (0, null, undefined, false, ...)
+
+```js
+import { hasFalsy } from "array-slayer/has.js";
+
+const array = [[],{},3,0,3];
+const result = hasFalsy(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [[],{},1,null,5];
+const result = _(array).hasFalsy();
+console.log(result); // -> true
 ```
 
 **[⬆ back to top](#quick-links)**
