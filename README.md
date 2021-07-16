@@ -82,6 +82,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasObject](#hasobject)
     - [hasTrue](#hastrue)
     - [hasTruthy](#hastruthy)
+    - [hasUndefined](#hasundefined)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -1039,6 +1040,30 @@ import _ from "array-slayer";
 
 const array = [0,NaN,null,undefined,false];
 const result = _(array).hasTruthy();
+console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasUndefined**
+
+returns true if array includes `undefined`
+
+```js
+import { hasUndefined } from "array-slayer/has.js";
+
+const array = [1, 5, null, undefined, false];
+const result = hasUndefined(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,null,"", [], {},false];
+const result = _(array).hasUndefined();
 console.log(result); // -> false
 ```
 
