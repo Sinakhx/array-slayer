@@ -80,6 +80,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasNullish](#hasnullish)
     - [hasNumber](#hasnumber)
     - [hasObject](#hasobject)
+    - [hasTrue](#hastrue)
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
@@ -989,6 +990,30 @@ import _ from "array-slayer";
 
 const array = [0,NaN,1,{id: "foo"},5];
 const result = _(array).hasObject();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasTrue**
+
+returns true if array includes a `true` boolean
+
+```js
+import { hasTrue } from "array-slayer/has.js";
+
+const array = [1, 5, null, undefined, false];
+const result = hasTrue(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,1,true,5];
+const result = _(array).hasTrue();
 console.log(result); // -> true
 ```
 
