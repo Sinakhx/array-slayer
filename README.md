@@ -80,6 +80,7 @@ console.log(result); // returns sorted array based on the selected keys
     - [hasNullish](#hasnullish)
     - [hasNumber](#hasnumber)
     - [hasObject](#hasobject)
+    - [hasString](#hasstring)
     - [hasTrue](#hastrue)
     - [hasTruthy](#hastruthy)
     - [hasUndefined](#hasundefined)
@@ -992,6 +993,30 @@ import _ from "array-slayer";
 
 const array = [0,NaN,1,{id: "foo"},5];
 const result = _(array).hasObject();
+console.log(result); // -> true
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **hasString**
+
+returns true if array includes an item of type `"string"`
+
+```js
+import { hasString } from "array-slayer/has.js";
+
+const array = [1, 5, null, {id: "foo"}, false];
+const result = hasString(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [0,NaN,1,"foo",5];
+const result = _(array).hasString();
 console.log(result); // -> true
 ```
 
