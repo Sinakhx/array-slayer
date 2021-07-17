@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../lib/src/fp/difference.js"],
-  "mappings": "AAAO,GAAM,GAAa,CAAC,EAAM,IAAS,CACxC,GAAM,GAAU,GAAI,KAAI,GACxB,MAAO,GAAK,OAAO,AAAC,GAAY,CAAC,EAAQ,IAAI",
+  "mappings": "AACO,GAAM,GAAa,CAAC,EAAM,IAAS,CACxC,GAAM,GAAU,GAAI,KAAI,GACxB,MAAO,GAAK,OAAO,AAAC,GAAY,CAAC,EAAQ,IAAI",
   "names": []
 }
