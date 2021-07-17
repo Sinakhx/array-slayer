@@ -1094,6 +1094,39 @@ console.log(result); // -> false
 
 **[⬆ back to top](#quick-links)**
 
+## interpolate
+
+Linear Interpolation
+A     a
+B     x = ?
+C     c
+
+array1 = [A, B, C]
+array2= [a, "x", c]
+x = interpolate(array1, array2);
+
+initial value for `x` can be set to either `"x"`, `"X"`, `"?"`, `null`, `false` or `undefined`
+
+```js
+import { interpolate } from "array-slayer/interpolate.js";
+
+const array1 = [1,2,3];
+const array2 = [2,"?",6];
+const result = interpolate(array1, array2);
+console.log(result); // -> 4
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).interpolate([2, undefined, 6])
+console.log(result); // -> 4
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
