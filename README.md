@@ -1146,7 +1146,7 @@ or
 ```js
 import _ from "array-slayer";
 
-const result = _([1,2,3]).intersection([2,3,6], [3,4,5])
+const result = _([1,2,3]).intersection([2,3,6], [3,4,5]).value;
 console.log(result); // -> [3]
 ```
 
