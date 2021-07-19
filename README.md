@@ -1127,6 +1127,31 @@ console.log(result); // -> 4
 
 **[⬆ back to top](#quick-links)**
 
+## intersection
+
+returns the common elements between two or more arrays (A ∩ B ∩ C ...)
+
+```js
+import { intersection } from "array-slayer/intersection.js";
+
+const array1 = [1,2,3];
+const array2 = [2,3,6];
+const array3 = [3,4,5];
+const result = intersection(array1, array2, array3);
+console.log(result); // -> [3]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).intersection([2,3,6], [3,4,5])
+console.log(result); // -> [3]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
