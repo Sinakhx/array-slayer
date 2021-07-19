@@ -1181,6 +1181,32 @@ console.log(result); // -> true
 
 **[⬆ back to top](#quick-links)**
 
+#### **isEqual**
+
+returns true if two arrays have the same elements in the same order (using `JSON.stringify` for comparison)
+
+```js
+import { isEqual } from "array-slayer/isEqual.js";
+
+const array1 = [4, false, {id: "foo"}];
+const array2 = [4, false, {id: "foo"}];
+const result = isEqual(array1, array2);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array1 = [4, false, {id: "foo"}];
+const array2 = [4, false, {id: "bar"}];
+const result = _(array1).isEqual(array2);
+console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
