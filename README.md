@@ -1247,14 +1247,17 @@ console.log(result); // -> false
 
 #### **max**
 
-returns the maximum value in an array
+returns the maximum value in array(s)
 
 ```js
 import { max } from "array-slayer/max.js";
 
-const array = [1,7,3];
-const result = max(array);
-console.log(result); // -> 7
+const result1 = max([ 1, 3, 7, 5 ]);
+console.log(result1); // -> 7
+const result2 = max(1, 3, 7, 5);
+console.log(result2); // -> 7
+const result3 = max([ 1, 3, 7, 5], [4, 6, [11, 0], 10], [7, 2]);
+console.log(result3); // -> 11
 ```
 
 or
@@ -1262,8 +1265,10 @@ or
 ```js
 import _ from "array-slayer";
 
-const result = _([1,2,3]).max();
-console.log(result); // -> [3]
+const result1 = _([1, 2, 3]).max();
+console.log(result1); // -> 3
+const result2 = _([4, 6, 8, 10]).max([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
+console.log(result2); // -> 11
 ```
 
 **[⬆ back to top](#quick-links)**
