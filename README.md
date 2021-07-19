@@ -1113,11 +1113,11 @@ console.log(result); // -> false
 
 Linear Interpolation
 
-A     a
+A -> a
 
-B     x = ?
+B -> x = ?
 
-C     c
+C -> c
 
 array1 = [A, B, C]
 
