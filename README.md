@@ -87,6 +87,9 @@ console.log(result); // returns sorted array based on the selected keys
 1. [interpolate](#interpolate)
 1. [intersection](#intersection)
 1. [is](#is)
+    - [isEmpty](#isempty)
+    - [isEqual](#isequal)
+    - [isUnique](#isunique)
 1. [math](#math)
 1. [matrix](#matrix)
 1. [random](#random)
@@ -1148,6 +1151,32 @@ import _ from "array-slayer";
 
 const result = _([1,2,3]).intersection([2,3,6], [3,4,5]).value;
 console.log(result); // -> [3]
+```
+
+**[⬆ back to top](#quick-links)**
+
+## is
+
+#### **isEmpty**
+
+returns true if `array.length === 0`;
+
+```js
+import { isEmpty } from "array-slayer/isEmpty.js";
+
+const array = [4, 5, 6];
+const result = isEmpty(array);
+console.log(result); // -> false
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [];
+const result = _(array).isEmpty();
+console.log(result); // -> true
 ```
 
 **[⬆ back to top](#quick-links)**
