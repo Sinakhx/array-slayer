@@ -1112,12 +1112,17 @@ console.log(result); // -> false
 ## interpolate
 
 Linear Interpolation
+
 A     a
+
 B     x = ?
+
 C     c
 
 array1 = [A, B, C]
+
 array2= [a, "x", c]
+
 x = interpolate(array1, array2);
 
 initial value for `x` can be set to either `"x"`, `"X"`, `"?"`, `null`, `false` or `undefined`
