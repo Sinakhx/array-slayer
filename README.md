@@ -91,6 +91,18 @@ console.log(result); // returns sorted array based on the selected keys
     - [isEqual](#isequal)
     - [isUnique](#isunique)
 1. [math](#math)
+    - [max](#max)
+    - [maxBy](#maxby)
+    - [maxOf](#maxof)
+    - [mean](#mean)
+    - [meanOf](#meanof)
+    - [min](#min)
+    - [minBy](#minby)
+    - [minOf](#minof)
+    - [product](#product)
+    - [productOf](#productof)
+    - [sum](#sum)
+    - [sumOf](#sumof)
 1. [matrix](#matrix)
 1. [random](#random)
 1. [range](#range)
@@ -1230,6 +1242,30 @@ console.log(result); // -> false
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## max
+
+returns the maximum element in array
+
+```js
+import { max } from "array-slayer/max.js";
+
+const array = [1,7,3];
+const result = max(array);
+console.log(result); // -> 7
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).max();
+console.log(result); // -> [3]
+```
+
+**[⬆ back to top](#quick-links)**
+
 
 ____________________________________
 
