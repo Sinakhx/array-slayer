@@ -1207,6 +1207,30 @@ console.log(result); // -> false
 
 **[⬆ back to top](#quick-links)**
 
+#### **isUnique**
+
+returns true if an array does not have repetetive items
+
+```js
+import { isUnique } from "array-slayer/isUnique.js";
+
+const array = [4, false, {id: "foo"}];
+const result = isUnique(array);
+console.log(result); // -> true
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array2 = [4, {id: "bar"}, {id: "bar"}];
+const result = _(array1).isUnique();
+console.log(result); // -> false
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
