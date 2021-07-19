@@ -1268,6 +1268,37 @@ console.log(result); // -> [3]
 
 **[⬆ back to top](#quick-links)**
 
+#### **maxBy**
+
+returns the maximum value of specific items in an array
+
+```js
+import { maxBy } from "array-slayer/maxBy.js";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 18 },
+    { id: 3, amount: 14 },
+];
+const result = maxBy(array, "amount"); // or maxBy(array, item => item.amount);
+console.log(result); // -> 18
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 18 },
+    { id: 3, amount: 14 },
+];
+const result = _(array).maxBy("amount"); // or _(array).maxBy(item => item.amount);
+console.log(result); // -> 18
+```
+
+**[⬆ back to top](#quick-links)**
 
 ____________________________________
 
