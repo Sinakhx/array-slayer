@@ -1243,9 +1243,11 @@ console.log(result); // -> false
 
 **[⬆ back to top](#quick-links)**
 
-## max
+## math
 
-returns the maximum element in array
+#### **max**
+
+returns the maximum value in an array
 
 ```js
 import { max } from "array-slayer/max.js";
