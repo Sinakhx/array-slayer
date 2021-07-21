@@ -1322,7 +1322,7 @@ const array = [
     [1, "foo", { id: 1, amount: { value: 14 } }, 15],
     [1, "foo", { id: 1, amount: { value: 18 } }, 15],
 ];
-const result = maxOf(array, "3.amount.value");
+const result = maxOf(array, "2.amount.value");
 console.log(result); // -> 18
 ```
 
@@ -1336,8 +1336,36 @@ const array = [
     [1, "foo", { id: 1, amount: { value: 14 } }, 15],
     [1, "foo", { id: 1, amount: { value: 18 } }, 15],
 ];
-const result = _(array).maxOf("3.amount.value");
+const result = _(array).maxOf("2.amount.value");
 console.log(result); // -> 18
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **min**
+
+returns the minimum value in array(s)
+
+```js
+import { min } from "array-slayer/min.js";
+
+const result1 = min([ 1, 3, 7, 5 ]);
+console.log(result1); // -> 1
+const result2 = min(1, 3, 7, 5);
+console.log(result2); // -> 1
+const result3 = min([ 1, 3, 7, 5], [4, 6, [11, 0], 10], [7, 2]);
+console.log(result3); // -> 0
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result1 = _([1, 2, 3]).min();
+console.log(result1); // -> 1
+const result2 = _([4, 6, 8, 10]).min([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
+console.log(result2); // -> 0
 ```
 
 **[⬆ back to top](#quick-links)**
