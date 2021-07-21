@@ -1693,6 +1693,29 @@ console.log(result2); // -> [0, 1, 2, 3, 4, 5]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## readOnly
+
+returns a readOnly copy of the given array
+
+```js
+import { readOnly } from "array-slayer/readOnly.js";
+
+const array = [1, 2, 3, 4, 5];
+const arr = readOnly(array);
+arr.pop(); // -> TypeError: Cannot delete property '4' of [object Array]
+```
+
+when importing from `array-slayer`, this method does not return a readOnly copy of the array, but changes the original array to a readOnly array; so that further methods chained that manipulate the array, will throw Error.
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 2, 3, 4, 5];
+const arr = _(array).readOnly().deleteByIndexes(2).value // -> throws Error
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
