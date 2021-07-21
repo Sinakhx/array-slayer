@@ -1508,6 +1508,37 @@ console.log(result); // -> 6
 
 **[⬆ back to top](#quick-links)**
 
+#### **productOf**
+
+returns the product of specific values in an array
+
+```js
+import { productOf } from "array-slayer/productOf.js";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 2 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 3 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 4 } }, 15],
+];
+const result = productOf(array, "2.amount.value");
+console.log(result); // -> 24
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 2 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 3 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 4 } }, 15],
+];
+const result = _(array).productOf("2.amount.value");
+console.log(result); // -> 24
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
