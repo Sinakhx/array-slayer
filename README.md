@@ -1290,7 +1290,7 @@ const array = [
     { id: 2, amount: 18 },
     { id: 3, amount: 14 },
 ];
-const result = maxBy(array, "amount"); // or maxBy(array, item => item.amount);
+const result = maxBy(array, item => item.amount);
 console.log(result); // -> 18
 ```
 
@@ -1304,7 +1304,39 @@ const array = [
     { id: 2, amount: 18 },
     { id: 3, amount: 14 },
 ];
-const result = _(array).maxBy("amount"); // or _(array).maxBy(item => item.amount);
+const result = _(array).maxBy(item => item.amount);
+console.log(result); // -> 18
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **maxOf**
+
+returns the maximum value of specific items in an array
+
+```js
+import { maxOf } from "array-slayer/maxOf.js";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 14 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 18 } }, 15],
+];
+const result = maxOf(array, "3.amount.value");
+console.log(result); // -> 18
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 14 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 18 } }, 15],
+];
+const result = _(array).maxOf("3.amount.value");
 console.log(result); // -> 18
 ```
 
