@@ -1370,6 +1370,38 @@ console.log(result2); // -> 0
 
 **[⬆ back to top](#quick-links)**
 
+#### **minBy**
+
+returns the minimum value of specific items in an array
+
+```js
+import { minBy } from "array-slayer/minBy.js";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 18 },
+    { id: 3, amount: 14 },
+];
+const result = minBy(array, item => item.amount);
+console.log(result); // -> 12
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 18 },
+    { id: 3, amount: 14 },
+];
+const result = _(array).maxBy(item => item.amount);
+console.log(result); // -> 12
+```
+
+**[⬆ back to top](#quick-links)**
+
 #### **minOf**
 
 returns the minimum value of specific items in an array
