@@ -1617,7 +1617,7 @@ or
 ```js
 import _ from "array-slayer";
 
-const result = _([1,2,3]).matrix([2,3,6]);
+const result = _([1,2,3]).dotProduct([2,3,6]);
 console.log(result); // -> 26
 ```
 
