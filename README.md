@@ -1370,6 +1370,38 @@ console.log(result2); // -> 0
 
 **[⬆ back to top](#quick-links)**
 
+#### **minOf**
+
+returns the minimum value of specific items in an array
+
+```js
+import { minOf } from "array-slayer/minOf.js";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 14 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 18 } }, 15],
+];
+const result = minOf(array, "2.amount.value");
+console.log(result); // -> 12
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 14 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 18 } }, 15],
+];
+const result = _(array).minOf("2.amount.value");
+console.log(result); // -> 12
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
