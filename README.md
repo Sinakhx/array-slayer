@@ -1667,6 +1667,32 @@ const result = _([1,2,3]).random();
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## range
+
+returns an array of consecutive numbers starting from the first argument & ending to the last argument (start & end are included)
+
+```js
+import { range } from "array-slayer/range.js";
+
+const result1 = range(5,8);
+console.log(result1); // -> [5, 6, 7, 8]
+const result2 = range(5);
+console.log(result3); // -> [0, 1, 2, 3, 4, 5]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result1 = _([]).range(5, 8);
+console.log(result1); // -> [5, 6, 7, 8]
+const result2 = _([]).range(5);
+console.log(result2); // -> [0, 1, 2, 3, 4, 5]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
