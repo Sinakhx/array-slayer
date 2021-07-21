@@ -1486,6 +1486,28 @@ console.log(result); // -> 12
 
 **[⬆ back to top](#quick-links)**
 
+#### **product**
+
+returns the product of values in an array
+
+```js
+import { product } from "array-slayer/product.js";
+
+const result = product([ 1, 2, 3 ]);
+console.log(result); // -> 6
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1, 2, 3]).product();
+console.log(result); // -> 6
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
