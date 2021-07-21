@@ -1646,6 +1646,27 @@ console.log(result); // -> 40
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## random
+
+returns a random element from an array
+
+```js
+import { random } from "array-slayer/random.js";
+
+const result = random([1,2,3]);
+console.log(result); // -> returns an accidental number form array (one of: 1, 2 or 3)
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).random();
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
