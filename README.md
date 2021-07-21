@@ -1342,6 +1342,28 @@ console.log(result); // -> 18
 
 **[⬆ back to top](#quick-links)**
 
+#### **mean**
+
+returns the mean value in an array
+
+```js
+import { mean } from "array-slayer/mean.js";
+
+const result = mean([ 2, 4, -2, 7, 4 ]);
+console.log(result); // -> 5
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([ 2, 4, -2, 7, 4 ]).mean();
+console.log(result); // -> 5
+```
+
+**[⬆ back to top](#quick-links)**
+
 #### **min**
 
 returns the minimum value in array(s)
