@@ -104,6 +104,8 @@ console.log(result); // returns sorted array based on the selected keys
     - [sum](#sum)
     - [sumOf](#sumof)
 1. [matrix](#matrix)
+    - [dotProduct](#dotproduct)
+    - [crossProduct](#crossproduct)
 1. [random](#random)
 1. [range](#range)
 1. [readOnly](#readOnly)
@@ -1591,6 +1593,32 @@ const array = [
 ];
 const result = _(array).sumOf("2.amount.value");
 console.log(result); // -> 9
+```
+
+**[⬆ back to top](#quick-links)**
+
+## matrix
+
+#### **dotProduct**
+
+returns the dot-product of two arrays
+
+```js
+import { dotProduct } from "array-slayer/matrix.js";
+
+const array1 = [1,2,3];
+const array2 = [2,3,6];
+const result = dotProduct(array1, array2);
+console.log(result); // -> 26    // which is 1*2 + 2*3 + 3*6 
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).matrix([2,3,6]);
+console.log(result); // -> 26
 ```
 
 **[⬆ back to top](#quick-links)**
