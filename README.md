@@ -1364,6 +1364,36 @@ console.log(result); // -> 5
 
 **[⬆ back to top](#quick-links)**
 
+#### **meanOf**
+
+returns the mean value of specific items in an array
+
+```js
+import { meanOf } from "array-slayer/meanOf.js";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 16 } }, 15],
+];
+const result = meanOf(array, "2.amount.value");
+console.log(result); // -> 14
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 12 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 16 } }, 15],
+];
+const result = _(array).meanOf("2.amount.value");
+console.log(result); // -> 14
+```
+
+**[⬆ back to top](#quick-links)**
+
 #### **min**
 
 returns the minimum value in array(s)
