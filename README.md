@@ -1562,6 +1562,38 @@ console.log(result); // -> 6
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **sumOf**
+
+returns the sum of specific values in an array
+
+```js
+import { sumOf } from "array-slayer/sumOf.js";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 2 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 3 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 4 } }, 15],
+];
+const result = sumOf(array, "2.amount.value");
+console.log(result); // -> 9
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    [1, "foo", { id: 1, amount: { value: 2 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 3 } }, 15],
+    [1, "foo", { id: 1, amount: { value: 4 } }, 15],
+];
+const result = _(array).sumOf("2.amount.value");
+console.log(result); // -> 9
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
