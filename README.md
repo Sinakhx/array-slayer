@@ -1622,6 +1622,30 @@ console.log(result); // -> 26
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **crossProduct**
+
+returns the cross-product of two arrays (as vectors of 1 to 3 elements)
+
+```js
+import { crossProduct } from "array-slayer/matrix.js";
+
+const array1 = [1,2,3];
+const array2 = [2,3,6];
+const result = crossProduct(array1, array2);
+console.log(result); // -> 40
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).crossProduct([2,3,6]);
+console.log(result); // -> 40
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
