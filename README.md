@@ -119,6 +119,7 @@ console.log(result); // returns sorted array based on the selected keys
 1. [union](#union)
 1. [unique](#unique)
 1. [x](#x)
+1. [zip](#zip)
 
 **[⬆ back to top](#quick-links)**
 
@@ -1536,6 +1537,28 @@ const array = [
 ];
 const result = _(array).productOf("2.amount.value");
 console.log(result); // -> 24
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **sum**
+
+returns the sum of values in an array
+
+```js
+import { sum } from "array-slayer/sum.js";
+
+const result = sum([ 1, 3, 7, 5 ]);
+console.log(result); // -> 16
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1, 2, 3]).sum();
+console.log(result); // -> 6
 ```
 
 **[⬆ back to top](#quick-links)**
