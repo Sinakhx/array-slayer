@@ -1725,7 +1725,7 @@ const arr = _(array).readOnly().deleteByIndexes(2).value // -> throws Error
 
 #### **replaceByIndex**
 
-replaces array items using the given array index
+replaces an array item using the given array index
 
 ```js
 import { replaceByIndex } from "array-slayer/replace.js";
@@ -1769,6 +1769,30 @@ import _ from "array-slayer";
 const array = [5, 6, 8, 4, 1];
 const result = _(array).replaceByIndexes([2, 4], [700, 900]).value;
 console.log(result); // -> [5, 6, 700, 4, 900]
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **replaceByValue**
+
+replaces an array item using the given value
+
+```js
+import { replaceByValue } from "array-slayer/replace.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = replaceByValue(array, 6, 500);
+console.log(result); // -> [5, 500, 8, 4, 1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).replaceByValue(6, 500).value;
+console.log(result); // -> [5, 500, 8, 4, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
