@@ -2022,6 +2022,30 @@ console.log(result); // -> [6, 8]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## take
+
+takes a slice of the array with the given array size & starting from the given index (default = 0)
+
+```js
+import { take } from "array-slayer/take.js";
+
+const array = [1, 8, 3, 9, 5, 6, 7, 8, 9, 7];
+const result = take(array, 5, 2);
+console.log(result); // -> [3, 9, 5, 6, 7]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 8, 3, 9, 5, 6, 7, 8, 9, 7];
+const result = _(array).take(4).value;
+console.log(result); // -> [1, 8, 3, 9]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
