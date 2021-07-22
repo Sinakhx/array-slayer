@@ -1822,6 +1822,30 @@ console.log(result); // -> [5, 6, 700, 4, 900]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## reverse
+
+reverses the array items from last to first
+
+```js
+import { reverse } from "array-slayer/reverse.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = reverse(array);
+console.log(result); // -> [1, 4, 8, 6, 5]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).reverse().value;
+console.log(result); // -> [1, 4, 8, 6, 5]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
