@@ -1725,7 +1725,7 @@ const arr = _(array).readOnly().deleteByIndexes(2).value // -> throws Error
 
 #### **replaceByIndex**
 
-replaces array items by the given array indexe
+replaces array items using the given array index
 
 ```js
 import { replaceByIndex } from "array-slayer/replace.js";
@@ -1743,6 +1743,32 @@ import _ from "array-slayer";
 const array = [5, 6, 8, 4, 1];
 const result = _(array).replaceByIndex(2, 700).value;
 console.log(result); // -> [5, 6, 700, 4, 1]
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **replaceByIndexes**
+
+similar to `replaceByIndex` replaces array items using the given array indexes (takes arrays of indexes & replace values instead of a single index & value).
+
+> **NOTE:** `replaceByIndexes` can also do what `replaceByIndex` does, but if you want to replace a single item in an array, we recommend to use `replaceByIndex` for performance reasons.
+
+```js
+import { replaceByIndexes } from "array-slayer/replace.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = replaceByIndexes(array, [2, 4], [700, 900]);
+console.log(result); // -> [5, 6, 700, 4, 900]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).replaceByIndexes([2, 4], [700, 900]).value;
+console.log(result); // -> [5, 6, 700, 4, 900]
 ```
 
 **[⬆ back to top](#quick-links)**
