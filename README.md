@@ -1874,6 +1874,34 @@ console.log(result2); // -> [8, 4, 2, 5, 6]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## shuffle
+
+shuffles (sorts randomly) the array items by the Modern Fisher-Yates Algorithm
+
+```js
+import { shuffle } from "array-slayer/shuffle.js";
+
+const array = [5, 6, 8, 4, 2];
+const result1 = shuffle(array);
+console.log(result1); // -> exapmle output: [4, 5, 6, 2, 8]
+const result2 = shuffle(array);
+console.log(result2); // -> exapmle output: [6, 5, 8, 2, 4]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 2];
+const result1 = _(array).shuffle().value;
+console.log(result2); // -> exapmle output: [2, 8, 4, 5, 6]
+const result1 = _(array).shuffle().value;
+console.log(result2); // -> exapmle output: [5, 2, 8, 6, 4]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
