@@ -122,6 +122,8 @@ console.log(result); // returns sorted array based on the selected keys
 1. [shuffle](#shuffle)
 1. [sort](#sort)
 1. [swap](#swap)
+    - [swapByIndexes](#swapbyindexes)
+    - [swapByValues](#swapbyvalues)
 1. [symmetricDifference](#symmetricDifference)
 1. [take](#take)
 1. [toJSONObject](#toJSONObject)
@@ -1939,6 +1941,32 @@ console.log(result2); // -> [
                       //     { id: 12, value: "c" },
                       //     { id: 11, value: "d" },
                       //    ]
+```
+
+**[⬆ back to top](#quick-links)**
+
+## swap
+
+#### **swapByIndexes**
+
+swaps two values in an array using the given indexes of those values
+
+```js
+import { swapByIndexes } from "array-slayer/swap.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = swapByIndexes(array, 1, 2);
+console.log(result); // -> [5, 8, 6, 4, 1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).swapByIndexes(0, 3).value;
+console.log(result); // -> [4, 6, 8, 5, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
