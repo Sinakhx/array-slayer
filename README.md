@@ -1970,6 +1970,30 @@ console.log(result); // -> [4, 6, 8, 5, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **swapByValues**
+
+swaps two values in an array using the target values
+
+```js
+import { swapByValues } from "array-slayer/swap.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = swapByValues(array, 6, 8);
+console.log(result); // -> [5, 8, 6, 4, 1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).swapByValues(5, 4).value;
+console.log(result); // -> [4, 6, 8, 5, 1]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
