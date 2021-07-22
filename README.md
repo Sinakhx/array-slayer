@@ -2095,6 +2095,30 @@ console.log(result); // -> {
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## types
+
+returns the types of items in an array
+
+```js
+import { types } from "array-slayer/types.js";
+
+const array = [15, false, {id: 115}, true, 18, 19, null];
+const result = types(array);
+console.log(result); // -> ["number", "boolean", "object"]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [15, false, {id: 115}, true, 18, 19, null];
+const result = _(array).types().value;
+console.log(result); // -> ["number", "boolean", "object"]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
