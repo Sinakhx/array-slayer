@@ -1906,6 +1906,42 @@ console.log(result2); // -> exapmle output: [5, 2, 8, 6, 4]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## sort
+
+sorts the array items based on the given conditions & function
+
+order: "ascending" (default) | "descending"
+
+sortType: "QuickSort" (default) | "MergeSort" | "InsertionSort" | "BubbleSort" | "RadixSort" | "HeapSort"
+
+```js
+import { sort } from "array-slayer/sort.js";
+
+const array = [5, 6, 8, 4, 2];
+const result = sort(array, { sortType = "InsertionSort" });
+console.log(result); // -> [2, 4, 5, 6, 8]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    { id: 14, value: "a" },
+    { id: 11, value: "d" },
+    { id: 12, value: "c" },
+];
+const result1 = _(array).sort({ order: "descending", sortBy: item => item.id }).value;
+console.log(result2); // -> [
+                      //     { id: 14, value: "a" },
+                      //     { id: 12, value: "c" },
+                      //     { id: 11, value: "d" },
+                      //    ]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
