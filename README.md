@@ -1,4 +1,7 @@
 # array-slayer
+
+> 🚨🚨 This project is a work in progress! Issues and pull requests are encouraged. 🚨🚨
+
 ## About
 With the array-slayer utility library you have:
 
