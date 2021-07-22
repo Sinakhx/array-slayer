@@ -7,6 +7,7 @@ With the array-slayer utility library you have:
 - ability to chain methods or import a single method as a seperate module.
 - much more readable & consice code for reviewing.
 - lightweight: only about ~16kbs (full-featured bundle)
+- immutable by nature (methods return a new array)
 
 ## Example usage
 ```js
