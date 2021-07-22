@@ -26,8 +26,10 @@ First public release.
 -----------------------------------
 
 ### TODO:
-- adding a clean command & prebuild: clean
-- adding typescript
+- adding more methods: `paginate`, `debounce`, `throttle`
+- cleaning `example.js`
+- adding a clean command & prebuild: clean (Done)
+- adding typescript?
 - adding husky, lint-staged & commit-lint
 - writing docs
 - writing tests
