@@ -1846,6 +1846,34 @@ console.log(result); // -> [1, 4, 8, 6, 5]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## rotate
+
+rotates the array items by the given number of rotations & direction (default = `"clockwise"`)
+
+```js
+import { rotate } from "array-slayer/rotate.js";
+
+const array = [5, 6, 8, 4, 2];
+const result1 = rotate(array, 1);
+console.log(result1); // -> [2, 5, 6, 8, 4]
+const result2 = rotate(array, 2, "counterclockwise");
+console.log(result2); // -> [8, 4, 2, 5, 6]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 2];
+const result1 = _(array).rotate(1).value;
+console.log(result2); // -> [2, 5, 6, 8, 4]
+const result1 = _(array).rotate(2, "counterclockwise").value;
+console.log(result2); // -> [8, 4, 2, 5, 6]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
