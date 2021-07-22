@@ -1994,6 +1994,34 @@ console.log(result); // -> [4, 6, 8, 5, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## symmetricDifference
+
+returns the symmetric difference of two arrays:
+
+> (A - B) ∪ (B - A) = (A ∪ B) - (A ∩ B)
+
+```js
+import { symmetricDifference } from "array-slayer/symmetricDifference.js";
+
+const A = [5, 6, 8, 4, 1];
+const B = [4, 5, 7, 1, 9];
+const result = symmetricDifference(A, B);
+console.log(result); // -> [6, 8]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const A = [5, 6, 8, 4, 1];
+const B = [4, 5, 7, 1, 9];
+const result = _(A).symmetricDifference(B).value;
+console.log(result); // -> [6, 8]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
