@@ -609,7 +609,7 @@ console.log(result); // -> [5]
 #### **getTruthyValues**
 
 ```js
-import { getTruthyValues } from "array-slayer/getTruthyValues.js";
+import { getTruthyValues } from "array-slayer/get.js";
 
 const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
 const result = getTruthyValues(array);
@@ -631,7 +631,7 @@ console.log(result); // -> [4, true, 1, "", "name", {}, [], f()];
 #### **getFalsyValues**
 
 ```js
-import { getFalsyValues } from "array-slayer/getFalsyValues.js";
+import { getFalsyValues } from "array-slayer/get.js";
 
 const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
 const result = getFalsyValues(array);
@@ -653,7 +653,7 @@ console.log(result); // -> [false, 0];
 #### **getAllKeys**
 
 ```js
-import { getAllKeys } from "array-slayer/getAllKeys.js";
+import { getAllKeys } from "array-slayer/get.js";
 
 const array = [{id: 12, name: "foo", lastName: "bar"}];
 const result = getAllKeys(array[0]);
