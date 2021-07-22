@@ -110,6 +110,10 @@ console.log(result); // returns sorted array based on the selected keys
 1. [range](#range)
 1. [readOnly](#readOnly)
 1. [replace](#replace)
+    - [replaceByIndex](#replacebyindex)
+    - [replaceByIndexes](#replacebyindexes)
+    - [replaceByValue](#replacebyvalue)
+    - [replaceByValues](#replacebyvalues)
 1. [rotate](#rotate)
 1. [shuffle](#shuffle)
 1. [sort](#sort)
@@ -1713,6 +1717,32 @@ import _ from "array-slayer";
 
 const array = [1, 2, 3, 4, 5];
 const arr = _(array).readOnly().deleteByIndexes(2).value // -> throws Error
+```
+
+**[⬆ back to top](#quick-links)**
+
+## replace
+
+#### **replaceByIndex**
+
+replaces array items by the given array indexe
+
+```js
+import { replaceByIndex } from "array-slayer/replace.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = replaceByIndex(array, 2, 700);
+console.log(result); // -> [5, 6, 700, 4, 1]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).replaceByIndex(2, 700).value;
+console.log(result); // -> [5, 6, 700, 4, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
