@@ -2059,6 +2059,42 @@ console.log(result); // -> [1, 8, 3, 9]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## toJSONObject
+
+takes two arrays for creating a json object: first array for representing the object keys & the second one as their respective values
+
+```js
+import { toJSONObject } from "array-slayer/toJSONObject.js";
+
+const keys = ["id", "user", "orderAmount", "date"];
+const values = [12, "foo", 500, "2021-07-05"];
+const result = toJSONObject(keys, values);
+console.log(result); // -> {
+                     //        id: 12,
+                     //        user: "foo",
+                     //        orderAmount: 500,
+                     //        date: "2021-07-05"
+                     //    }
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const keys = ["id", "user", "orderAmount", "date"];
+const values = [12, "foo", 500, "2021-07-05"];
+const result = _([]).toJSONObject(keys, values);
+console.log(result); // -> {
+                     //        id: 12,
+                     //        user: "foo",
+                     //        orderAmount: 500,
+                     //        date: "2021-07-05"
+                     //    }
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
