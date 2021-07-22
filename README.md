@@ -135,6 +135,19 @@ console.log(result); // returns sorted array based on the selected keys
 
 **[⬆ back to top](#quick-links)**
 
+## Specific Chain Methods
+- [deepCopy](#deepCopy)
+- [last](#last)
+- [length](#length)
+- [mutate](#mutate)
+- [value](#value)
+
+## Advanced Configuration
+- [configuring deepCopy](#configuring-deepcopy)
+- [configuring serialization](#configuring-serialization)
+
+**[⬆ back to top](#quick-links)**
+
 ## booleans
 
 #### **AND**
