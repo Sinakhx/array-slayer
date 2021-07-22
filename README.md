@@ -1796,6 +1796,32 @@ console.log(result); // -> [5, 500, 8, 4, 1]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **replaceByValues**
+
+similar to `replaceByValue` replaces array items using the given array indexes (takes arrays of indexes & replace values instead of a single index & value).
+
+> **NOTE:** `replaceByValues` can also do what `replaceByValue` does, but if you want to replace a single item in an array, we recommend to use `replaceByValue` for performance reasons.
+
+```js
+import { replaceByValues } from "array-slayer/replace.js";
+
+const array = [5, 6, 8, 4, 1];
+const result = replaceByValues(array, [8, 1], [700, 900]);
+console.log(result); // -> [5, 6, 700, 4, 900]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [5, 6, 8, 4, 1];
+const result = _(array).replaceByValues([8, 1], [700, 900]).value;
+console.log(result); // -> [5, 6, 700, 4, 900]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
