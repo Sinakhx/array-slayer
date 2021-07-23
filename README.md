@@ -2236,6 +2236,30 @@ console.log(result); // -> [1, 2, 3]
 
 **[⬆ back to top](#quick-links)**
 
+#### **xpush**
+
+returns a copy of the array with extra last element(s)
+
+```js
+import { xpush } from "array-slayer/xpush.js";
+
+const array = [1, 2, 3, 4];
+const result = xpush(array, 5);
+console.log(result); // -> [1, 2, 3, 4, 5]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 2, 3, 4];
+const result = _(array).xpush(5, 6, 7);
+console.log(result); // -> [1, 2, 3, 4, 5, 6, 7]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
