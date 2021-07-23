@@ -2171,6 +2171,38 @@ console.log(result); // -> [1, 2, 3, 5]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+#### **uniqueBy**
+
+returns an array of items in which specific items in array are unique
+
+```js
+import { uniqueBy } from "array-slayer/uniqueBy.js";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 12 },
+    { id: 3, amount: 14 },
+];
+const result = uniqueBy(array, item => item.amount);
+console.log(result); // -> [{ id: 3, amount: 14 }]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [
+    { id: 1, amount: 12 },
+    { id: 2, amount: 12 },
+    { id: 3, amount: 14 },
+];
+const result = _(array).uniqueBy(item => item.amount);
+console.log(result); // -> [{ id: 3, amount: 14 }]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
