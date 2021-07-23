@@ -2119,6 +2119,31 @@ console.log(result); // -> ["number", "boolean", "object"]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## union
+
+returns the union of elements in two or more arrays (A ∪ B ∪ C ...)
+
+```js
+import { union } from "array-slayer/union.js";
+
+const array1 = [1,2,3];
+const array2 = [2,3,6];
+const array3 = [3,4,5];
+const result = union(array1, array2, array3);
+console.log(result); // -> [1, 2, 3, 4, 5, 6]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1,2,3]).union([2,3,6], [3,4,5]).value;
+console.log(result); // -> [1, 2, 3, 4, 5, 6]
+```
+
+**[⬆ back to top](#quick-links)**
 ____________________________________
 
 ## License
