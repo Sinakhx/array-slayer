@@ -2260,6 +2260,30 @@ console.log(result); // -> [1, 2, 3, 4, 5, 6, 7]
 
 **[⬆ back to top](#quick-links)**
 
+#### **xshift**
+
+returns a copy of the array without the first element
+
+```js
+import { xshift } from "array-slayer/xshift.js";
+
+const array = [1, 2, 3, 4];
+const result = xshift(array);
+console.log(result); // -> [2, 3, 4]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 2, 3, 4];
+const result = _(array).xshift();
+console.log(result); // -> [2, 3, 4]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
