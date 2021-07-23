@@ -136,8 +136,8 @@ console.log(result); // returns sorted array based on the selected keys
     - [xpop](#xpop)
     - [xpush](#xpush)
     - [xshift](#xshift)
-    - [xsplice](#xsplice)
     - [xunshift](#xunshift)
+    - [xsplice](#xsplice)
 1. [zip](#zip)
 
 **[⬆ back to top](#quick-links)**
@@ -2212,6 +2212,8 @@ console.log(result); // -> [{ id: 3, amount: 14 }]
 
 ## x
 
+the `x` methods do a similar job as their native js counterparts except they return the resulting array instead of the manipulated item(s)
+
 #### **xpop**
 
 returns a copy of the array without the last element
@@ -2304,6 +2306,30 @@ import _ from "array-slayer";
 const array = [1, 2, 3, 4];
 const result = _(array).xunshift(8);
 console.log(result); // -> [8, 1, 2, 3, 4]
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **xsplice**
+
+similar to the splice method of javascript, but returns the resulting array instead of spliced items
+
+```js
+import { xsplice } from "array-slayer/x.js";
+
+const array = [7, 8, 9, 1, 2, 3, 4];
+const result = xsplice(array, 1, 1, 5) // (arr, targetIndex, howManyToRemove = 0, ...newItems)
+console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [7, 8, 9, 1, 2, 3, 4];
+const result = _(array).xsplice(1, 1, 5);
+console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
 ```
 
 **[⬆ back to top](#quick-links)**
