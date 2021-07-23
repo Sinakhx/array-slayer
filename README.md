@@ -2217,7 +2217,7 @@ console.log(result); // -> [{ id: 3, amount: 14 }]
 returns a copy of the array without the last element
 
 ```js
-import { xpop } from "array-slayer/xpop.js";
+import { xpop } from "array-slayer/x.js";
 
 const array = [1, 2, 3, 4];
 const result = xpop(array);
@@ -2241,7 +2241,7 @@ console.log(result); // -> [1, 2, 3]
 returns a copy of the array with extra last element(s)
 
 ```js
-import { xpush } from "array-slayer/xpush.js";
+import { xpush } from "array-slayer/x.js";
 
 const array = [1, 2, 3, 4];
 const result = xpush(array, 5);
@@ -2265,7 +2265,7 @@ console.log(result); // -> [1, 2, 3, 4, 5, 6, 7]
 returns a copy of the array without the first element
 
 ```js
-import { xshift } from "array-slayer/xshift.js";
+import { xshift } from "array-slayer/x.js";
 
 const array = [1, 2, 3, 4];
 const result = xshift(array);
@@ -2280,6 +2280,30 @@ import _ from "array-slayer";
 const array = [1, 2, 3, 4];
 const result = _(array).xshift();
 console.log(result); // -> [2, 3, 4]
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **xunshift**
+
+returns a copy of the array with extra first element(s)
+
+```js
+import { xunshift } from "array-slayer/x.js";
+
+const array = [1, 2, 3, 4];
+const result = xunshift(array, 9, 8, 7);
+console.log(result); // -> [9, 8, 7, 1, 2, 3, 4]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 2, 3, 4];
+const result = _(array).xunshift(8);
+console.log(result); // -> [8, 1, 2, 3, 4]
 ```
 
 **[⬆ back to top](#quick-links)**
