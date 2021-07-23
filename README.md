@@ -2355,7 +2355,7 @@ import _ from "array-slayer";
 
 const array1 = [7, 8, 9];
 const array2 = [1, 2, 3];
-const result = _(array1).zip(array2);
+const result = _(array1).zip(array2).value;
 console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
 ```
 
