@@ -2334,6 +2334,33 @@ console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
 
 **[⬆ back to top](#quick-links)**
 
+## zip
+
+creates an array of grouped elements from the given arrays of the same lengths as arguments. (grouping is based on indexes)
+
+```js
+import { zip } from "array-slayer/zip.js";
+
+const array1 = [7, 8, 9];
+const array2 = [1, 2, 3];
+const array3 = [5, 4, 8];
+const result = zip(array1, array2, array3)
+console.log(result); // -> [ [7, 1, 5], [8, 2, 4], [9, 3, 8] ]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array1 = [7, 8, 9];
+const array2 = [1, 2, 3];
+const result = _(array1).zip(array2);
+console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
