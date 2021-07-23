@@ -130,6 +130,8 @@ console.log(result); // returns sorted array based on the selected keys
 1. [types](#types)
 1. [union](#union)
 1. [unique](#unique)
+    - [unique](#unique)
+    - [uniqueBy](#uniqueby)
 1. [x](#x)
 1. [zip](#zip)
 
@@ -2141,6 +2143,31 @@ import _ from "array-slayer";
 
 const result = _([1,2,3]).union([2,3,6], [3,4,5]).value;
 console.log(result); // -> [1, 2, 3, 4, 5, 6]
+```
+
+**[⬆ back to top](#quick-links)**
+
+## unique
+
+#### **unique**
+
+removes repetetive items in an array, returning an array of unique items
+
+```js
+import { unique } from "array-slayer/unique.js";
+
+const array = [1, 2, 3, 2, 3, 3, 5, 1, 3, 5, 1, 2];
+const result = unique(array);
+console.log(result); // -> [1, 2, 3, 5]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const result = _([1, 2, 3, 2, 3, 3, 5, 1, 3, 5, 1, 2]).unique().value;
+console.log(result); // -> [1, 2, 3, 5]
 ```
 
 **[⬆ back to top](#quick-links)**
