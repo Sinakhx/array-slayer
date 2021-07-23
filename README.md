@@ -133,11 +133,17 @@ console.log(result); // returns sorted array based on the selected keys
     - [unique](#unique)
     - [uniqueBy](#uniqueby)
 1. [x](#x)
+    - [xpop](#xpop)
+    - [xpush](#xpush)
+    - [xshift](#xshift)
+    - [xsplice](#xsplice)
+    - [xunshift](#xunshift)
 1. [zip](#zip)
 
 **[⬆ back to top](#quick-links)**
 
 ## Specific Chain Methods
+- [Native JS Methods](#native-js-methods)
 - [deepCopy](#deepCopy)
 - [last](#last)
 - [length](#length)
@@ -2203,6 +2209,33 @@ console.log(result); // -> [{ id: 3, amount: 14 }]
 ```
 
 **[⬆ back to top](#quick-links)**
+
+## x
+
+#### **xpop**
+
+returns a copy of the array without the last element
+
+```js
+import { xpop } from "array-slayer/xpop.js";
+
+const array = [1, 2, 3, 4];
+const result = xpop(array);
+console.log(result); // -> [1, 2, 3]
+```
+
+or
+
+```js
+import _ from "array-slayer";
+
+const array = [1, 2, 3, 4];
+const result = _(array).xpop();
+console.log(result); // -> [1, 2, 3]
+```
+
+**[⬆ back to top](#quick-links)**
+
 ____________________________________
 
 ## License
