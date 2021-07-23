@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../lib/src/fp/zip.js"],
+  "mappings": "AAAO,GAAM,GAAM,CAAC,KAAQ,IAAW,EAAI,IAAI,CAAC,EAAM,IAAQ,EAAO,OAAO,CAAC,EAAG,IAAM,CAAC,GAAG,EAAG,EAAE,IAAO,CAAC",
+  "names": []
+}
