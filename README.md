@@ -142,7 +142,7 @@ console.log(result); // returns sorted array based on the selected keys
 
 **[⬆ back to top](#quick-links)**
 
-## Specific Chain Methods
+## [Specific Chain Methods](#specific-chain-methods)
 - [Native JS Methods](#native-js-methods)
 - [deepCopy](#deepCopy)
 - [lastElement](#lastElement)
@@ -150,7 +150,7 @@ console.log(result); // returns sorted array based on the selected keys
 - [mutate](#mutate)
 - [value](#value)
 
-## Advanced Configuration
+## [Advanced Configuration](#advanced-configuration)
 - [configuring deepCopy](#configuring-deepcopy)
 - [configuring serialization](#configuring-serialization)
 
@@ -2361,6 +2361,22 @@ console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
 
 **[⬆ back to top](#quick-links)**
 
+## Specific Chain Methods
+
+The following methods are specific to the main bundle & irrelevant to the methods one imports as modules. You can only use these whenever you import the default lib from `"array-slayer"`.
+
+#### **Native JS Methods**
+
+The default import supports chaining array-slayer specific methods with all javascript's native array methods such as: `concat`, `slice`, `map`, `filter`, etc. You can chain any javascript array method with array-slayer methods.
+
+Example:
+```js
+import ArraySlayer from "array-slayer";
+
+const array = [7, 8, 9];
+const result1 = ArraySlayer(array).map(num => num + 2).includes(10); // -> true
+const result2 = ArraySlayer(array).concat([1, 2, 3]).sum(); // -> 30 
+```
 ____________________________________
 
 ## License
