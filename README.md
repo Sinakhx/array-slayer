@@ -2365,7 +2365,7 @@ console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
 
 The following methods are specific to the main bundle & irrelevant to the methods one imports as modules. You can only use these whenever you import the default lib from `"array-slayer"`.
 
-#### **Native JS Methods**
+### **Native JS Methods**
 
 The default import supports chaining array-slayer specific methods with all javascript's native array methods such as: `concat`, `slice`, `map`, `filter`, etc. You can chain any javascript array method with array-slayer methods.
 
@@ -2380,7 +2380,7 @@ const result2 = ArraySlayer(array).concat([1, 2, 3]).sum(); // -> 30
 
 **[⬆ back to top](#specific-chain-methods)**
 
-#### **deepCopy**
+### **deepCopy**
 
 array-slayer's default deepCopy method is just a simple daily implemention by many programmers which loses non-JSON-serializable data:
 
@@ -2399,6 +2399,32 @@ const array = [12, {id: 2, order: { values: [1, 2, 5], amount: 200 } }];
 const deeplyCopied = ArraySlayer(array).deepCopy().value;
 deeplyCopied[1].order.values[2] = 7;
 ArraySlayer(array).isEqual(deeplyCopied) // -> false
+```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **lastElement**
+
+returns the last element of the array.
+
+```js
+import ArraySlayer from "array-slayer";
+
+const lastItem = ArraySlayer([1, 2, 3, 4, 5]).lastElement;
+console.log(lastItem); // -> 5
+```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **length**
+
+returns the length of the array.
+
+```js
+import ArraySlayer from "array-slayer";
+
+const length = ArraySlayer([1, 2, 3, 4, 5]).length;
+console.log(length); // -> 5
 ```
 
 **[⬆ back to top](#specific-chain-methods)**
