@@ -2437,13 +2437,11 @@ changes the array-slayer's refrence to the original array. All other methods cha
 import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4, 5];
-const sameArray = ArraySlayer(array).mutate();
+const sameArray = ArraySlayer(array).mutate().value;
 sameArray[1] = 9;
 console.log(array);     // -> [1, 9, 3, 4, 5]
 console.log(sameArray); // -> [1, 9, 3, 4, 5]
 ```
-
-**[⬆ back to top](#specific-chain-methods)**
 ____________________________________
 
 ## License
