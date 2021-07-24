@@ -9,12 +9,12 @@ With the array-slayer utility library you have:
 - faster development speed by letting array-slayer solve usual problems for you.
 - ability to chain methods or import a single method as a seperate module.
 - much more readable & consice code for reviewing.
-- lightweight: only about ~16kbs (full-featured bundle)
-- immutable by nature (methods return a new array)
+- lightweight import: only about ~16kbs (full-featured bundle)
+- immutability by nature (methods return a new array)
 
 ## Example usage
 ```js
-import _ from "arraySlayer";
+import ArraySlayer from "arraySlayer";
 
 const array = [
     [47,25,1,{ a: "Foo2", b: "Bar1", c: { d: "ct", e: { f: 9 }, g: 1 } }],
@@ -23,7 +23,7 @@ const array = [
     [47,38,4,{ a: "Foo4", b: "Bar4", c: { d: "zd", e: { f: 1 }, g: 4 } }],
 ];
 
-const result = _(array)
+const result = ArraySlayer(array)
                 .column(3, "c.e.f")
                 .concat([17, 2, 1, 18])
                 .replaceByValue(1, 100)
@@ -145,7 +145,7 @@ console.log(result); // returns sorted array based on the selected keys
 ## Specific Chain Methods
 - [Native JS Methods](#native-js-methods)
 - [deepCopy](#deepCopy)
-- [last](#last)
+- [lastElement](#lastElement)
 - [length](#length)
 - [mutate](#mutate)
 - [value](#value)
@@ -163,52 +163,52 @@ console.log(result); // returns sorted array based on the selected keys
 can check if every single item in array is equal to the given constant
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const flag = true;
 const array = [true, true, true, true];
 
-// B([a, b, c]).AND(flag) => (a === flag) && (b === flag) && (c === flag)
-const result = B(array).AND(flag);
+// Bools([a, b, c]).AND(flag) => (a === flag) && (b === flag) && (c === flag)
+const result = Bools(array).AND(flag);
 console.log(result); // -> true
 ```
 
 can also check if a filter function passes on every single item in an array
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const id = 18;
 const array = [-1, 5, 2, 4];
 
-// B([a, b, c]).AND(item, fn) => (fn(a, item)) && (fn(b, item)) && (fn(c, item))
-const result = B(array).AND(id, item => item < id);
+// Bools([a, b, c]).AND(item, fn) => (fn(a, item)) && (fn(b, item)) && (fn(c, item))
+const result = Bools(array).AND(id, item => item < id);
 console.log(result); // -> true
 ```
 
 can also check if two arrays of the same length, have the same items in the same order
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const array1 = [-1, 5, 2, true];
 const array2 = [-1, 5, 2, false];
 
-// B([a, b, c]).AND([e, f, g]) => (a === e) && (b === f) && (c === g)
-const result = B(array1).AND(array2);
+// Bools([a, b, c]).AND([e, f, g]) => (a === e) && (b === f) && (c === g)
+const result = Bools(array1).AND(array2);
 console.log(result); // -> false
 ```
 
 can also check if a function passes on each elements of the two arrays of the same length, respectively
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const array1 = [-1, 5, 2, 8];
 const array2 = [-3, 4, 1, 7];
 
-// B([a, b, c]).AND([e, f, g], fn) => (fn(a,e)) && (fn(b,f)) && (fn(c,g))
-const result = B(array1).AND(array2, (a,b) => a > b);
+// Bools([a, b, c]).AND([e, f, g], fn) => (fn(a,e)) && (fn(b,f)) && (fn(c,g))
+const result = Bools(array1).AND(array2, (a,b) => a > b);
 console.log(result); // -> true
 ```
 
@@ -219,13 +219,13 @@ console.log(result); // -> true
 ANDs all elements of the given array (& optional argument)
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 let flag = true;
 const array = [1, true, {}, "name"];
 
-// B([a, b, c]).AND_ALL(bool) => (a && bool) && (b && bool) && (c && bool)
-const result = B(array).AND_ALL(flag);
+// Bools([a, b, c]).AND_ALL(bool) => (a && bool) && (b && bool) && (c && bool)
+const result = Bools(array).AND_ALL(flag);
 console.log(result); // -> true
 ```
 
@@ -236,13 +236,13 @@ console.log(result); // -> true
 ORs all elements of the given array & ANDs the result with an optional argument
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const flag = false;
 const array = [1, 2, 3, true, {}];
 
-// B([a, b, c]).AND_OR(bool) => (a && bool) || (b && bool) || (c && bool)
-const result = B(array).AND_OR();
+// Bools([a, b, c]).AND_OR(bool) => (a && bool) || (b && bool) || (c && bool)
+const result = Bools(array).AND_OR();
 console.log(result); // -> true
 ```
 
@@ -253,53 +253,53 @@ console.log(result); // -> true
 can check if at least one item in array is equal to the given constant
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const flag = true;
 const array = [false, false, false, true];
 
-// B([a, b, c]).OR(flag) => (a === flag) || (b === flag) || (c === flag)
-const result = B(array).OR(flag);
+// Bools([a, b, c]).OR(flag) => (a === flag) || (b === flag) || (c === flag)
+const result = Bools(array).OR(flag);
 console.log(result); // -> true
 ```
 
 can also check if a filter function passes on at least one item in an array
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const id = 18;
 const array = [40, 50, 2, 60];
 
-// B([a, b, c]).OR(item, fn) => (fn(a, item)) || (fn(b, item)) || (fn(c, item))
-const result = B(array).OR(id, item => item < id);
+// Bools([a, b, c]).OR(item, fn) => (fn(a, item)) || (fn(b, item)) || (fn(c, item))
+const result = Bools(array).OR(id, item => item < id);
 console.log(result); // -> true
 ```
 
 can also check if two arrays of the same length, have at least one common item with the same index
 
 ```js
-import B from "array-slayer/booleans.js";
-// or 'import B from "array-slayer";' alternatively
+import Bools from "array-slayer/booleans.js";
+// or 'import Bools from "array-slayer";' alternatively
 
 const array1 = [-1, 5, 2, true];
 const array2 = [-1, 1, 7, false];
 
-// B([a, b, c]).OR([e, f, g]) => (a === e) || (b === f) || (c === g)
-const result = B(array1).OR(array2);
+// Bools([a, b, c]).OR([e, f, g]) => (a === e) || (b === f) || (c === g)
+const result = Bools(array1).OR(array2);
 console.log(result); // -> true
 ```
 
 can also check if a function passes at least one of the respective elements of the two arrays of the same length
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const array1 = [70, 1, 2, 8];
 const array2 = [-3, 4, 1, 7];
 
-// B([a, b, c]).OR([e, f, g], fn) => (fn(a,e)) || (fn(b,f)) || (fn(c,g))
-const result = B(array1).OR(array2, (a,b) => a < b);
+// Bools([a, b, c]).OR([e, f, g], fn) => (fn(a,e)) || (fn(b,f)) || (fn(c,g))
+const result = Bools(array1).OR(array2, (a,b) => a < b);
 console.log(result); // -> true
 ```
 
@@ -310,12 +310,12 @@ console.log(result); // -> true
 ORs all elements of the given array (& optional argument)
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const array = [1, 2, 3, 0];
 
-// B([a, b, c]).OR_ALL(bool) => (a || bool) && (b || bool) && (c || bool)
-const result = B(array).OR_ALL();
+// Bools([a, b, c]).OR_ALL(bool) => (a || bool) && (b || bool) && (c || bool)
+const result = Bools(array).OR_ALL();
 console.log(result); // -> false
 ```
 
@@ -326,13 +326,13 @@ console.log(result); // -> false
 ANDs all elements of the given array & ORs the result with  an optional argument
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const flag = true;
 const array = [1, 2, 3, 0];
 
-// B([a, b, c]).OR_AND(bool) => (a || bool) && (b || bool) && (c || bool)
-const result = B(array).OR_AND(flag);
+// Bools([a, b, c]).OR_AND(bool) => (a || bool) && (b || bool) && (c || bool)
+const result = Bools(array).OR_AND(flag);
 console.log(result); // -> true
 ```
 
@@ -341,11 +341,11 @@ console.log(result); // -> true
 XORs all elements of the given array (& optional argument)
 
 ```js
-import B from "array-slayer/booleans.js";
+import Bools from "array-slayer/booleans.js";
 
 const array = [1, 2, 3, 0];
 
-const result = B(array).XOR_ALL();
+const result = Bools(array).XOR_ALL();
 console.log(result); // -> 0
 ```
 
@@ -364,10 +364,10 @@ console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).chunk(3).value;
+const result = ArraySlayer(array).chunk(3).value;
 console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 ```
 
@@ -388,10 +388,10 @@ console.log(result); // -> []
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).clear().value;
+const result = ArraySlayer(array).clear().value;
 console.log(result); // -> []
 ```
 
@@ -412,10 +412,10 @@ console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1,2,9,7,8,6,2,6,2];
-const result = _(array).clearByIndexes(0, 2, 3).value;
+const result = ArraySlayer(array).clearByIndexes(0, 2, 3).value;
 console.log(result); // -> [undefined,2,undefined,undefined,8,6,2,6,2];
 ```
 
@@ -436,10 +436,10 @@ console.log(result); // -> [undefined,2,9,7,undefined,undefined,2,undefined,2];
 clearByValues can also compare objects, but it is more costly than clearByIndexes
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [4, {id: 12}, "str", {c: [8, {d: "name"}] }, 24];
-const result = _(array).clearByValues("str", { c: [8, {d: "name"}] }).value;
+const result = ArraySlayer(array).clearByValues("str", { c: [8, {d: "name"}] }).value;
 console.log(result); // -> [4, {id: 12}, undefined, undefined, 24];
 ```
 
@@ -464,14 +464,14 @@ console.log(result); // -> [2, 5, 8];
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [4, {id: 1}, "baz", {c: [8, {d: "foo"}], f: { e: 5 } }, 24],
     [4, {id: 2}, "foo", {c: [8, {d: "bar"}], f: { e: 6 } }, 24],
     [4, {id: 3}, "bar", {c: [8, {d: "baz"}], f: { e: 7 } }, 24]
 ];
-const result = _(array).column(3, "f.e").value;
+const result = ArraySlayer(array).column(3, "f.e").value;
 console.log(result); // -> [5, 6, 7];
 ```
 
@@ -496,10 +496,10 @@ console.log(result); // -> 1
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1,2,1,5,1,8];
-const result = _(array).count(1);
+const result = ArraySlayer(array).count(1);
 console.log(result); // -> 3
 ```
 
@@ -520,10 +520,10 @@ console.log(result); // -> [6,1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5,6,8,4,1];
-const result = _(array).deleteByIndexes(0, 2, 3).value;
+const result = ArraySlayer(array).deleteByIndexes(0, 2, 3).value;
 console.log(result); // -> [6,1]
 ```
 
@@ -544,10 +544,10 @@ console.log(result); // -> [6,1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5,6,8,4,1];
-const result = _(array).deleteByValues(5, 8, 4).value;
+const result = ArraySlayer(array).deleteByValues(5, 8, 4).value;
 console.log(result); // -> [6,1]
 ```
 
@@ -569,11 +569,11 @@ console.log(result); // -> [6, 4, 1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array1 = [5,6,8,4,1];
 const array2 = [7,8,9,5,3];
-const result = _(array1).difference(array2).value;
+const result = ArraySlayer(array1).difference(array2).value;
 console.log(result); // -> [6, 4, 1]
 ```
 
@@ -594,10 +594,10 @@ console.log(result); // -> [0, 2, 3, 7]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5,6,5,5,1,7,8,5];
-const result = _(array).findAllOccurences(5).value;
+const result = ArraySlayer(array).findAllOccurences(5).value;
 console.log(result); // -> [0, 2, 3, 7]
 ```
 
@@ -618,10 +618,10 @@ console.log(result); // -> [5]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5,6,5,5,1,7,8,5];
-const result = _(array).findDuplicates(array).value;
+const result = ArraySlayer(array).findDuplicates(array).value;
 console.log(result); // -> [5]
 ```
 
@@ -642,10 +642,10 @@ console.log(result); // -> [4, true, 1, "", "name", {}, [], f()];
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
-const result = _(array).getTruthyValues(array).value;
+const result = ArraySlayer(array).getTruthyValues(array).value;
 console.log(result); // -> [4, true, 1, "", "name", {}, [], f()];
 ```
 
@@ -664,10 +664,10 @@ console.log(result); // -> [false, 0];
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [4, true, false, 0, 1, "", "name", {}, [], function(){}];
-const result = _(array).getFalsyValues(array).value;
+const result = ArraySlayer(array).getFalsyValues(array).value;
 console.log(result); // -> [false, 0];
 ```
 
@@ -686,10 +686,10 @@ console.log(result); // -> ["id", "name", "foo", "lastName"];
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [{id: 12, name: "foo", lastName: "bar"}];
-const result = _(array).getAllKeys(array[0]).value;
+const result = ArraySlayer(array).getAllKeys(array[0]).value;
 console.log(result); // -> ["id", "name", "foo", "lastName"];
 ```
 
@@ -710,10 +710,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [{id: 12, name: "foo", lastName: "bar"}];
-const result = _(array).has({id: 12, name: "foo", lastName: "bar"});
+const result = ArraySlayer(array).has({id: 12, name: "foo", lastName: "bar"});
 console.log(result); // -> true
 ```
 
@@ -732,10 +732,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1,2,3,4,5];
-const result = _(array).hasAll([2,4,5]);
+const result = ArraySlayer(array).hasAll([2,4,5]);
 console.log(result); // -> true
 ```
 
@@ -754,10 +754,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = ["foo",false,3,4,5];
-const result = _(array).hasAllTypes(["string", "boolean", "number"]);
+const result = ArraySlayer(array).hasAllTypes(["string", "boolean", "number"]);
 console.log(result); // -> true
 ```
 
@@ -776,10 +776,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [[],false,3,4,5];
-const result = _(array).hasArray();
+const result = ArraySlayer(array).hasArray();
 console.log(result); // -> true
 ```
 
@@ -798,10 +798,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [[],false,3,4,5];
-const result = _(array).hasBoolean();
+const result = ArraySlayer(array).hasBoolean();
 console.log(result); // -> true
 ```
 
@@ -822,10 +822,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [{id: 12},{id: 12},3,4,5];
-const result = _(array).hasDuplicates();
+const result = ArraySlayer(array).hasDuplicates();
 console.log(result); // -> true
 ```
 
@@ -846,10 +846,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [{id: 12},[18],3,4,5];
-const result = _(array).hasEmptyArr();
+const result = ArraySlayer(array).hasEmptyArr();
 console.log(result); // -> false
 ```
 
@@ -870,10 +870,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [{id: 12},[18],3,4,5];
-const result = _(array).hasEmptyObj();
+const result = ArraySlayer(array).hasEmptyObj();
 console.log(result); // -> false
 ```
 
@@ -894,10 +894,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [[],{},0,null,undefined];
-const result = _(array).hasFalse();
+const result = ArraySlayer(array).hasFalse();
 console.log(result); // -> false
 ```
 
@@ -918,10 +918,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [[],{},1,null,5];
-const result = _(array).hasFalsy();
+const result = ArraySlayer(array).hasFalsy();
 console.log(result); // -> true
 ```
 
@@ -942,10 +942,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,null,5];
-const result = _(array).hasNaN();
+const result = ArraySlayer(array).hasNaN();
 console.log(result); // -> true
 ```
 
@@ -966,10 +966,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,null,5];
-const result = _(array).hasNull();
+const result = ArraySlayer(array).hasNull();
 console.log(result); // -> true
 ```
 
@@ -990,10 +990,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,undefined,5];
-const result = _(array).hasNullish();
+const result = ArraySlayer(array).hasNullish();
 console.log(result); // -> true
 ```
 
@@ -1014,10 +1014,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,undefined,5];
-const result = _(array).hasNumber();
+const result = ArraySlayer(array).hasNumber();
 console.log(result); // -> true
 ```
 
@@ -1038,10 +1038,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,{id: "foo"},5];
-const result = _(array).hasObject();
+const result = ArraySlayer(array).hasObject();
 console.log(result); // -> true
 ```
 
@@ -1062,10 +1062,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,"foo",5];
-const result = _(array).hasString();
+const result = ArraySlayer(array).hasString();
 console.log(result); // -> true
 ```
 
@@ -1086,10 +1086,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,1,true,5];
-const result = _(array).hasTrue();
+const result = ArraySlayer(array).hasTrue();
 console.log(result); // -> true
 ```
 
@@ -1110,10 +1110,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,null,undefined,false];
-const result = _(array).hasTruthy();
+const result = ArraySlayer(array).hasTruthy();
 console.log(result); // -> false
 ```
 
@@ -1134,10 +1134,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [0,NaN,null,"", [], {},false];
-const result = _(array).hasUndefined();
+const result = ArraySlayer(array).hasUndefined();
 console.log(result); // -> false
 ```
 
@@ -1173,9 +1173,9 @@ console.log(result); // -> 4
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).interpolate([2, undefined, 6])
+const result = ArraySlayer([1,2,3]).interpolate([2, undefined, 6])
 console.log(result); // -> 4
 ```
 
@@ -1198,9 +1198,9 @@ console.log(result); // -> [3]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).intersection([2,3,6], [3,4,5]).value;
+const result = ArraySlayer([1,2,3]).intersection([2,3,6], [3,4,5]).value;
 console.log(result); // -> [3]
 ```
 
@@ -1223,10 +1223,10 @@ console.log(result); // -> false
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [];
-const result = _(array).isEmpty();
+const result = ArraySlayer(array).isEmpty();
 console.log(result); // -> true
 ```
 
@@ -1248,11 +1248,11 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array1 = [4, false, {id: "foo"}];
 const array2 = [4, false, {id: "bar"}];
-const result = _(array1).isEqual(array2);
+const result = ArraySlayer(array1).isEqual(array2);
 console.log(result); // -> false
 ```
 
@@ -1273,10 +1273,10 @@ console.log(result); // -> true
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array2 = [4, {id: "bar"}, {id: "bar"}];
-const result = _(array1).isUnique();
+const result = ArraySlayer(array1).isUnique();
 console.log(result); // -> false
 ```
 
@@ -1302,11 +1302,11 @@ console.log(result3); // -> 11
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result1 = _([1, 2, 3]).max();
+const result1 = ArraySlayer([1, 2, 3]).max();
 console.log(result1); // -> 3
-const result2 = _([4, 6, 8, 10]).max([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
+const result2 = ArraySlayer([4, 6, 8, 10]).max([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
 console.log(result2); // -> 11
 ```
 
@@ -1331,14 +1331,14 @@ console.log(result); // -> 18
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     { id: 1, amount: 12 },
     { id: 2, amount: 18 },
     { id: 3, amount: 14 },
 ];
-const result = _(array).maxBy(item => item.amount);
+const result = ArraySlayer(array).maxBy(item => item.amount);
 console.log(result); // -> 18
 ```
 
@@ -1363,14 +1363,14 @@ console.log(result); // -> 18
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [1, "foo", { id: 1, amount: { value: 12 } }, 15],
     [1, "foo", { id: 1, amount: { value: 14 } }, 15],
     [1, "foo", { id: 1, amount: { value: 18 } }, 15],
 ];
-const result = _(array).maxOf("2.amount.value");
+const result = ArraySlayer(array).maxOf("2.amount.value");
 console.log(result); // -> 18
 ```
 
@@ -1390,9 +1390,9 @@ console.log(result); // -> 5
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([ 2, 4, -2, 7, 4 ]).mean();
+const result = ArraySlayer([ 2, 4, -2, 7, 4 ]).mean();
 console.log(result); // -> 5
 ```
 
@@ -1416,13 +1416,13 @@ console.log(result); // -> 14
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [1, "foo", { id: 1, amount: { value: 12 } }, 15],
     [1, "foo", { id: 1, amount: { value: 16 } }, 15],
 ];
-const result = _(array).meanOf("2.amount.value");
+const result = ArraySlayer(array).meanOf("2.amount.value");
 console.log(result); // -> 14
 ```
 
@@ -1446,11 +1446,11 @@ console.log(result3); // -> 0
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result1 = _([1, 2, 3]).min();
+const result1 = ArraySlayer([1, 2, 3]).min();
 console.log(result1); // -> 1
-const result2 = _([4, 6, 8, 10]).min([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
+const result2 = ArraySlayer([4, 6, 8, 10]).min([1, 3, 7, 5], [5, [0, 2, [11, 0]]]);
 console.log(result2); // -> 0
 ```
 
@@ -1475,14 +1475,14 @@ console.log(result); // -> 12
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     { id: 1, amount: 12 },
     { id: 2, amount: 18 },
     { id: 3, amount: 14 },
 ];
-const result = _(array).maxBy(item => item.amount);
+const result = ArraySlayer(array).maxBy(item => item.amount);
 console.log(result); // -> 12
 ```
 
@@ -1507,14 +1507,14 @@ console.log(result); // -> 12
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [1, "foo", { id: 1, amount: { value: 12 } }, 15],
     [1, "foo", { id: 1, amount: { value: 14 } }, 15],
     [1, "foo", { id: 1, amount: { value: 18 } }, 15],
 ];
-const result = _(array).minOf("2.amount.value");
+const result = ArraySlayer(array).minOf("2.amount.value");
 console.log(result); // -> 12
 ```
 
@@ -1534,9 +1534,9 @@ console.log(result); // -> 6
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1, 2, 3]).product();
+const result = ArraySlayer([1, 2, 3]).product();
 console.log(result); // -> 6
 ```
 
@@ -1561,14 +1561,14 @@ console.log(result); // -> 24
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [1, "foo", { id: 1, amount: { value: 2 } }, 15],
     [1, "foo", { id: 1, amount: { value: 3 } }, 15],
     [1, "foo", { id: 1, amount: { value: 4 } }, 15],
 ];
-const result = _(array).productOf("2.amount.value");
+const result = ArraySlayer(array).productOf("2.amount.value");
 console.log(result); // -> 24
 ```
 
@@ -1588,9 +1588,9 @@ console.log(result); // -> 16
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1, 2, 3]).sum();
+const result = ArraySlayer([1, 2, 3]).sum();
 console.log(result); // -> 6
 ```
 
@@ -1615,14 +1615,14 @@ console.log(result); // -> 9
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [1, "foo", { id: 1, amount: { value: 2 } }, 15],
     [1, "foo", { id: 1, amount: { value: 3 } }, 15],
     [1, "foo", { id: 1, amount: { value: 4 } }, 15],
 ];
-const result = _(array).sumOf("2.amount.value");
+const result = ArraySlayer(array).sumOf("2.amount.value");
 console.log(result); // -> 9
 ```
 
@@ -1646,9 +1646,9 @@ console.log(result); // -> 26    // which is 1*2 + 2*3 + 3*6
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).dotProduct([2,3,6]);
+const result = ArraySlayer([1,2,3]).dotProduct([2,3,6]);
 console.log(result); // -> 26
 ```
 
@@ -1670,9 +1670,9 @@ console.log(result); // -> 40
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).crossProduct([2,3,6]);
+const result = ArraySlayer([1,2,3]).crossProduct([2,3,6]);
 console.log(result); // -> 40
 ```
 
@@ -1692,9 +1692,9 @@ console.log(result); // -> returns an accidental number form array (one of: 1, 2
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).random();
+const result = ArraySlayer([1,2,3]).random();
 ```
 
 **[⬆ back to top](#quick-links)**
@@ -1715,11 +1715,11 @@ console.log(result3); // -> [0, 1, 2, 3, 4, 5]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result1 = _([]).range(5, 8);
+const result1 = ArraySlayer([]).range(5, 8);
 console.log(result1); // -> [5, 6, 7, 8]
-const result2 = _([]).range(5);
+const result2 = ArraySlayer([]).range(5);
 console.log(result2); // -> [0, 1, 2, 3, 4, 5]
 ```
 
@@ -1740,10 +1740,10 @@ arr.pop(); // -> TypeError: Cannot delete property '4' of [object Array]
 when importing from `array-slayer`, this method does not return a readOnly copy of the array, but changes the original array to a readOnly array; so that further methods chained that manipulate the array, will throw Error.
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4, 5];
-const arr = _(array).readOnly().deleteByIndexes(2).value // -> throws Error
+const arr = ArraySlayer(array).readOnly().deleteByIndexes(2).value // -> throws Error
 ```
 
 **[⬆ back to top](#quick-links)**
@@ -1765,10 +1765,10 @@ console.log(result); // -> [5, 6, 700, 4, 1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).replaceByIndex(2, 700).value;
+const result = ArraySlayer(array).replaceByIndex(2, 700).value;
 console.log(result); // -> [5, 6, 700, 4, 1]
 ```
 
@@ -1791,10 +1791,10 @@ console.log(result); // -> [5, 6, 700, 4, 900]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).replaceByIndexes([2, 4], [700, 900]).value;
+const result = ArraySlayer(array).replaceByIndexes([2, 4], [700, 900]).value;
 console.log(result); // -> [5, 6, 700, 4, 900]
 ```
 
@@ -1815,10 +1815,10 @@ console.log(result); // -> [5, 500, 8, 4, 1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).replaceByValue(6, 500).value;
+const result = ArraySlayer(array).replaceByValue(6, 500).value;
 console.log(result); // -> [5, 500, 8, 4, 1]
 ```
 
@@ -1841,10 +1841,10 @@ console.log(result); // -> [5, 6, 700, 4, 900]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).replaceByValues([8, 1], [700, 900]).value;
+const result = ArraySlayer(array).replaceByValues([8, 1], [700, 900]).value;
 console.log(result); // -> [5, 6, 700, 4, 900]
 ```
 
@@ -1865,10 +1865,10 @@ console.log(result); // -> [1, 4, 8, 6, 5]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).reverse().value;
+const result = ArraySlayer(array).reverse().value;
 console.log(result); // -> [1, 4, 8, 6, 5]
 ```
 
@@ -1891,12 +1891,12 @@ console.log(result2); // -> [8, 4, 2, 5, 6]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 2];
-const result1 = _(array).rotate(1).value;
+const result1 = ArraySlayer(array).rotate(1).value;
 console.log(result2); // -> [2, 5, 6, 8, 4]
-const result1 = _(array).rotate(2, "counterclockwise").value;
+const result1 = ArraySlayer(array).rotate(2, "counterclockwise").value;
 console.log(result2); // -> [8, 4, 2, 5, 6]
 ```
 
@@ -1919,12 +1919,12 @@ console.log(result2); // -> exapmle output: [6, 5, 8, 2, 4]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 2];
-const result1 = _(array).shuffle().value;
+const result1 = ArraySlayer(array).shuffle().value;
 console.log(result2); // -> exapmle output: [2, 8, 4, 5, 6]
-const result1 = _(array).shuffle().value;
+const result1 = ArraySlayer(array).shuffle().value;
 console.log(result2); // -> exapmle output: [5, 2, 8, 6, 4]
 ```
 
@@ -1949,14 +1949,14 @@ console.log(result); // -> [2, 4, 5, 6, 8]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     { id: 14, value: "a" },
     { id: 11, value: "d" },
     { id: 12, value: "c" },
 ];
-const result1 = _(array).sort({ order: "descending", sortBy: item => item.id }).value;
+const result1 = ArraySlayer(array).sort({ order: "descending", sortBy: item => item.id }).value;
 console.log(result2); // -> [
                       //     { id: 14, value: "a" },
                       //     { id: 12, value: "c" },
@@ -1983,10 +1983,10 @@ console.log(result); // -> [5, 8, 6, 4, 1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).swapByIndexes(0, 3).value;
+const result = ArraySlayer(array).swapByIndexes(0, 3).value;
 console.log(result); // -> [4, 6, 8, 5, 1]
 ```
 
@@ -2007,10 +2007,10 @@ console.log(result); // -> [5, 8, 6, 4, 1]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [5, 6, 8, 4, 1];
-const result = _(array).swapByValues(5, 4).value;
+const result = ArraySlayer(array).swapByValues(5, 4).value;
 console.log(result); // -> [4, 6, 8, 5, 1]
 ```
 
@@ -2034,11 +2034,11 @@ console.log(result); // -> [6, 8]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const A = [5, 6, 8, 4, 1];
 const B = [4, 5, 7, 1, 9];
-const result = _(A).symmetricDifference(B).value;
+const result = ArraySlayer(A).symmetricDifference(B).value;
 console.log(result); // -> [6, 8]
 ```
 
@@ -2059,10 +2059,10 @@ console.log(result); // -> [3, 9, 5, 6, 7]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 8, 3, 9, 5, 6, 7, 8, 9, 7];
-const result = _(array).take(4).value;
+const result = ArraySlayer(array).take(4).value;
 console.log(result); // -> [1, 8, 3, 9]
 ```
 
@@ -2089,11 +2089,11 @@ console.log(result); // -> {
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const keys = ["id", "user", "orderAmount", "date"];
 const values = [12, "foo", 500, "2021-07-05"];
-const result = _([]).toJSONObject(keys, values);
+const result = ArraySlayer([]).toJSONObject(keys, values);
 console.log(result); // -> {
                      //        id: 12,
                      //        user: "foo",
@@ -2119,10 +2119,10 @@ console.log(result); // -> ["number", "boolean", "object"]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [15, false, {id: 115}, true, 18, 19, null];
-const result = _(array).types().value;
+const result = ArraySlayer(array).types().value;
 console.log(result); // -> ["number", "boolean", "object"]
 ```
 
@@ -2145,9 +2145,9 @@ console.log(result); // -> [1, 2, 3, 4, 5, 6]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1,2,3]).union([2,3,6], [3,4,5]).value;
+const result = ArraySlayer([1,2,3]).union([2,3,6], [3,4,5]).value;
 console.log(result); // -> [1, 2, 3, 4, 5, 6]
 ```
 
@@ -2170,9 +2170,9 @@ console.log(result); // -> [1, 2, 3, 5]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
-const result = _([1, 2, 3, 2, 3, 3, 5, 1, 3, 5, 1, 2]).unique().value;
+const result = ArraySlayer([1, 2, 3, 2, 3, 3, 5, 1, 3, 5, 1, 2]).unique().value;
 console.log(result); // -> [1, 2, 3, 5]
 ```
 
@@ -2197,14 +2197,14 @@ console.log(result); // -> [{ id: 3, amount: 14 }]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     { id: 1, amount: 12 },
     { id: 2, amount: 12 },
     { id: 3, amount: 14 },
 ];
-const result = _(array).uniqueBy(item => item.amount);
+const result = ArraySlayer(array).uniqueBy(item => item.amount);
 console.log(result); // -> [{ id: 3, amount: 14 }]
 ```
 
@@ -2229,10 +2229,10 @@ console.log(result); // -> [1, 2, 3]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4];
-const result = _(array).xpop();
+const result = ArraySlayer(array).xpop();
 console.log(result); // -> [1, 2, 3]
 ```
 
@@ -2253,10 +2253,10 @@ console.log(result); // -> [1, 2, 3, 4, 5]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4];
-const result = _(array).xpush(5, 6, 7);
+const result = ArraySlayer(array).xpush(5, 6, 7);
 console.log(result); // -> [1, 2, 3, 4, 5, 6, 7]
 ```
 
@@ -2277,10 +2277,10 @@ console.log(result); // -> [2, 3, 4]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4];
-const result = _(array).xshift();
+const result = ArraySlayer(array).xshift();
 console.log(result); // -> [2, 3, 4]
 ```
 
@@ -2301,10 +2301,10 @@ console.log(result); // -> [9, 8, 7, 1, 2, 3, 4]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [1, 2, 3, 4];
-const result = _(array).xunshift(8);
+const result = ArraySlayer(array).xunshift(8);
 console.log(result); // -> [8, 1, 2, 3, 4]
 ```
 
@@ -2325,10 +2325,10 @@ console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array = [7, 8, 9, 1, 2, 3, 4];
-const result = _(array).xsplice(1, 1, 5);
+const result = ArraySlayer(array).xsplice(1, 1, 5);
 console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
 ```
 
@@ -2351,11 +2351,11 @@ console.log(result); // -> [ [7, 1, 5], [8, 2, 4], [9, 3, 8] ]
 or
 
 ```js
-import _ from "array-slayer";
+import ArraySlayer from "array-slayer";
 
 const array1 = [7, 8, 9];
 const array2 = [1, 2, 3];
-const result = _(array1).zip(array2).value;
+const result = ArraySlayer(array1).zip(array2).value;
 console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
 ```
 
