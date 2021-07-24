@@ -2442,6 +2442,21 @@ sameArray[1] = 9;
 console.log(array);     // -> [1, 9, 3, 4, 5]
 console.log(sameArray); // -> [1, 9, 3, 4, 5]
 ```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **value**
+
+Most array-slayer's methods return an object by default. In order to get the returning array at the end of the chain, one must chain `.value` at the end (*NOTE*: methods that return primitive types won't need this extra keyword).
+
+```js
+import ArraySlayer from "array-slayer";
+
+const array = ArraySlayer([1, 2, 3, 4, 5]).value();
+console.log(array); // -> [1, 2, 3, 4, 5]
+```
+
+**[⬆ back to top](#specific-chain-methods)**
 ____________________________________
 
 ## License
