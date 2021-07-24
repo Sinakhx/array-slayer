@@ -142,15 +142,15 @@ console.log(result); // returns sorted array based on the selected keys
 
 **[⬆ back to top](#quick-links)**
 
-## [Specific Chain Methods](#specific-chain-methods)
+## Specific Chain Methods
 - [Native JS Methods](#native-js-methods)
-- [deepCopy](#deepCopy)
-- [lastElement](#lastElement)
+- [deepCopy](#deepcopy)
+- [lastElement](#lastelement)
 - [length](#length)
 - [mutate](#mutate)
 - [value](#value)
 
-## [Advanced Configuration](#advanced-configuration)
+## Advanced Configuration
 - [configuring deepCopy](#configuring-deepcopy)
 - [configuring serialization](#configuring-serialization)
 
@@ -2377,6 +2377,20 @@ const array = [7, 8, 9];
 const result1 = ArraySlayer(array).map(num => num + 2).includes(10); // -> true
 const result2 = ArraySlayer(array).concat([1, 2, 3]).sum(); // -> 30 
 ```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+#### **deepCopy**
+
+array-slayer's default deepCopy method is just a simple daily implemention by many programmers:
+
+```js
+const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
+```
+
+However, you can change this by providing your own deepCopy function to array-slayer's configuration. (see [Advanced Configuration](#advanced-configuration))
+
+**[⬆ back to top](#specific-chain-methods)**
 ____________________________________
 
 ## License
