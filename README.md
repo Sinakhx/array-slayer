@@ -2382,13 +2382,24 @@ const result2 = ArraySlayer(array).concat([1, 2, 3]).sum(); // -> 30
 
 #### **deepCopy**
 
-array-slayer's default deepCopy method is just a simple daily implemention by many programmers:
+array-slayer's default deepCopy method is just a simple daily implemention by many programmers which loses non-JSON-serializable data:
 
 ```js
 const deepCopy = (obj) => JSON.parse(JSON.stringify(obj));
 ```
 
 However, you can change this by providing your own deepCopy function to array-slayer's configuration. (see [Advanced Configuration](#advanced-configuration))
+
+Example Usage:
+
+```js
+import ArraySlayer from "array-slayer";
+
+const array = [12, {id: 2, order: { values: [1, 2, 5], amount: 200 } }];
+const deeplyCopied = ArraySlayer(array).deepCopy().value;
+deeplyCopied[1].order.values[2] = 7;
+ArraySlayer(array).isEqual(deeplyCopied) // -> false
+```
 
 **[⬆ back to top](#specific-chain-methods)**
 ____________________________________
