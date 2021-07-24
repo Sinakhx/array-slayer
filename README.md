@@ -2395,7 +2395,7 @@ Example Usage:
 ```js
 import ArraySlayer from "array-slayer";
 
-const array = [12, {id: 2, order: { values: [1, 2, 5], amount: 200 } }];
+const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
 const deeplyCopied = ArraySlayer(array).deepCopy().value;
 deeplyCopied[1].order.values[2] = 7;
 ArraySlayer(array).isEqual(deeplyCopied) // -> false
@@ -2425,6 +2425,22 @@ import ArraySlayer from "array-slayer";
 
 const length = ArraySlayer([1, 2, 3, 4, 5]).length;
 console.log(length); // -> 5
+```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **mutate**
+
+changes the array-slayer's refrence to the original array. All other methods chained after this method will mutate the original array in-place, so this method should be used carefully in order to avoid unpredictable behavior as it won't obey the immutability principle any more.
+
+```js
+import ArraySlayer from "array-slayer";
+
+const array = [1, 2, 3, 4, 5];
+const sameArray = ArraySlayer(array).mutate();
+sameArray[1] = 9;
+console.log(array);     // -> [1, 9, 3, 4, 5]
+console.log(sameArray); // -> [1, 9, 3, 4, 5]
 ```
 
 **[⬆ back to top](#specific-chain-methods)**
