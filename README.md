@@ -2475,6 +2475,22 @@ console.log(array); // -> [1, 2, 3, 4, 5]
 ```
 
 **[⬆ back to top](#specific-chain-methods)**
+
+## Advanced Configuration
+
+array-slayer takes a second argument for custom user configuraions for `serialization` & `deepClone`. One can use it this way:
+
+```js
+import ArraySlayer from "array-slayer";
+
+const slayer = arr => ArraySlayer(arr, {
+    // the following are the default implementaions for array-slayer (you don't need any configuration if you want to define them as below):
+    serialize: array => JSON.stringify(array),
+    cloneDeep: array => JSON.parse(JSON.stringify(array))
+});
+```
+
+
 ____________________________________
 
 ## License
