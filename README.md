@@ -2503,7 +2503,7 @@ import cloneDeep from "lodash.cloneDeep";
 const slayer = arr => ArraySlayer(arr, { cloneDeep: cloneDeep });
 
 const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
-const deeplyCopied = ArraySlayer(array).deepCopy().value;
+const deeplyCopied = slayer(array).deepCopy().value;
 ```
 
 
