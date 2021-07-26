@@ -2506,7 +2506,25 @@ const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
 const deeplyCopied = slayer(array).deepCopy().value;
 ```
 
+**[⬆ back to top](#advanced-configuration)**
 
+### **configuring serialization**
+
+one can set any custom serialization function for array-slayer's default serialization.
+
+Example using `serialize-javascript`:
+
+```js
+import ArraySlayer from "array-slayer";
+import serialize from "serialize-javascript";
+
+const slayer = arr => ArraySlayer(arr, { serialize: serialize });
+
+const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
+const deeplyCopied = slayer(array).isEqual(array.slice()); // -> checks for equality using the serialize method from "serialize-javascript" instead of JSON.stringify which could lose non-JSON-serializable data in comparison
+```
+
+**[⬆ back to top](#advanced-configuration)**
 ____________________________________
 
 ## License
