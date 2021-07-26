@@ -2490,6 +2490,22 @@ const slayer = arr => ArraySlayer(arr, {
 });
 ```
 
+### **configuring deepCopy**
+
+one can set any custom deepCopy function for array-slayer's default deep cloning.
+
+Example using `lodash.cloneDeep`:
+
+```js
+import ArraySlayer from "array-slayer";
+import cloneDeep from "lodash.cloneDeep";
+
+const slayer = arr => ArraySlayer(arr, { cloneDeep: cloneDeep });
+
+const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
+const deeplyCopied = ArraySlayer(array).deepCopy().value;
+```
+
 
 ____________________________________
 
