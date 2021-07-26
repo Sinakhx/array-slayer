@@ -145,6 +145,7 @@ console.log(result); // returns sorted array based on the selected keys
 ## Specific Chain Methods
 - [Native JS Methods](#native-js-methods)
 - [deepCopy](#deepcopy)
+- [index](#index)
 - [lastElement](#lastelement)
 - [length](#length)
 - [mutate](#mutate)
@@ -2399,6 +2400,23 @@ const array = [12, { id: 2, order: { values: [1, 2, 5], amount: 200 } }];
 const deeplyCopied = ArraySlayer(array).deepCopy().value;
 deeplyCopied[1].order.values[2] = 7;
 ArraySlayer(array).isEqual(deeplyCopied) // -> false
+```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **index**
+
+returns the value from the given array index. (argument can also be a negative number corresponding to counting from end of the array)
+
+```js
+import ArraySlayer from "array-slayer";
+
+const secondItem = ArraySlayer([1, 2, 3, 4, 5]).index(1);
+console.log(secondItem); // -> 2
+const lastItem = ArraySlayer([1, 2, 3, 4, 5]).index(-1);
+console.log(lastItem); // -> 5
+const nextToLastItem = ArraySlayer([1, 2, 3, 4, 5]).index(-2);
+console.log(nextToLastItem); // -> 4
 ```
 
 **[⬆ back to top](#specific-chain-methods)**
