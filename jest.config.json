@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "testEnvironment": "node",
+  "transform": {
+    "\\.js$": "babel-jest"
+  },
+  "globals": {
+    "NODE_ENV": "test"
+  }
+}
