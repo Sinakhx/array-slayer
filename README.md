@@ -139,6 +139,8 @@ console.log(result); // returns sorted array based on the selected keys
     - [xunshift](#xunshift)
     - [xsplice](#xsplice)
 1. [zip](#zip)
+    - [zip](#zip)
+    - [unzip](#unzip)
 
 **[⬆ back to top](#quick-links)**
 
@@ -2337,6 +2339,8 @@ console.log(result); // -> [7, 5, 9, 1, 2, 3, 4]
 
 ## zip
 
+#### **zip**
+
 creates an array of grouped elements from the given arrays of the same lengths as arguments. (grouping is based on indexes)
 
 ```js
@@ -2358,6 +2362,28 @@ const array1 = [7, 8, 9];
 const array2 = [1, 2, 3];
 const result = ArraySlayer(array1).zip(array2).value;
 console.log(result); // -> [ [7, 1], [8, 2], [9, 3] ]
+```
+
+**[⬆ back to top](#quick-links)**
+
+#### **unzip**
+
+```js
+import { unzip } from "array-slayer/zip.js";
+
+const zipped = [ [7, 1, 5], [8, 2, 4], [9, 3, 8] ];
+const result = unzip(zipped)
+console.log(result); // -> [ [7, 8, 9], [1, 2, 3], [5, 4, 8] ]
+```
+
+or
+
+```js
+import ArraySlayer from "array-slayer";
+
+const zipped = [ [7, 1, 5], [8, 2, 4], [9, 3, 8] ];
+const result = ArraySlayer(zipped).unzip().value;
+console.log(result); // -> [ [7, 8, 9], [1, 2, 3], [5, 4, 8] ]
 ```
 
 **[⬆ back to top](#quick-links)**
