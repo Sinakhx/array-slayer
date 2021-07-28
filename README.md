@@ -359,7 +359,7 @@ console.log(result); // -> 0
 ```js
 import { chunk } from "array-slayer/chunk.js";
 
-const array = [1,2,9,7,8,6,2,6,2];
+const array = [1,2,9,7,8,6,2,6,2,7];
 const result = chunk(3, array);
 console.log(result); // -> [ [ 1, 2, 9 ], [ 7, 8, 6 ], [ 2, 6, 2 ], [ 7 ] ]
 ```
