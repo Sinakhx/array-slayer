@@ -1,2 +1,2 @@
-var h=(t,n)=>{let o=[],e=Math.ceil(n.length/t);for(let c=0;c<e;c++)o.push(n.slice(c*t,c*t+t));return o};export{h as chunk};
+var a=new Set(["string","number","boolean","null","undefined","symbol"]);var c=JSON.stringify,l=JSON.parse;var o=e=>{if(Array.isArray(e)===!1)throw new Error("parameter should be of type array")};var f=(e,t)=>{if(o(t),e<0||!e)throw new Error("size should be defined as a positive value");let n=[],s=Math.ceil(t.length/e);for(let r=0;r<s;r++)n.push(t.slice(r*e,r*e+e));return n};export{f as chunk};
 //# sourceMappingURL=chunk.js.map
