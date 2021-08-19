@@ -28,8 +28,7 @@ First public release.
 ### TODO:
 - adding more methods: `paginate`, `debounce`, `throttle`
 - cleaning `example.js`
-- adding a clean command & prebuild: clean (Done)
 - adding typescript?
 - adding husky, lint-staged & commit-lint
-- writing docs
 - writing tests
+- future collections: 'Obj', 'Num', 'Matrix', 'Str', 'Date'

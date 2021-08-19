@@ -10,7 +10,7 @@
   },
   "scripts": {
     "clean": "rimraf dist node_modules && npm i",
-    "prebuild": "npm run clean",
+    "prebuild": "npm run test && npm run clean",
     "build": "node lib/utils/build.js",
     "test": "jest"
   },
@@ -33,6 +33,7 @@
   "homepage": "https://github.com/Sinakhx/array-slayer#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.14.8",
+    "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
     "esbuild": "^0.12.14",
     "jest": "^27.0.6"
