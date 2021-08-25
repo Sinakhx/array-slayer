@@ -151,6 +151,7 @@ console.log(result); // returns sorted array based on the selected keys
 - [lastElement](#lastelement)
 - [length](#length)
 - [mutate](#mutate)
+- [next](#next)
 - [value](#value)
 
 ## Advanced Configuration
@@ -2485,6 +2486,25 @@ const sameArray = ArraySlayer(array).mutate().value;
 sameArray[1] = 9;
 console.log(array);     // -> [1, 9, 3, 4, 5]
 console.log(sameArray); // -> [1, 9, 3, 4, 5]
+```
+
+**[⬆ back to top](#specific-chain-methods)**
+
+### **next**
+
+returns the next item in the array on each next call.
+
+```js
+import ArraySlayer from "array-slayer";
+
+const array = [1, 2, 3, 4, 5];
+const arr = ArraySlayer(array);
+console.log(arr.next());  // -> 1
+console.log(arr.next());  // -> 2
+console.log(arr.next());  // -> 3
+console.log(arr.next());  // -> 4
+console.log(arr.next());  // -> 5
+console.log(arr.next());  // -> undefined
 ```
 
 **[⬆ back to top](#specific-chain-methods)**
