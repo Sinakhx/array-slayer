@@ -509,7 +509,7 @@ const array = [
     [4,5,6],
     [7,8,9],
 ];
-const result = count(array, [4,5,6]);
+const result = count([4,5,6], array);
 console.log(result); // -> 1
 ```
 
