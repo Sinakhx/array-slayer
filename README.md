@@ -14,7 +14,7 @@ With the array-slayer utility library you have:
 
 ## Example usage
 ```js
-import ArraySlayer from "arraySlayer";
+import ArraySlayer from "array-slayer";
 
 const array = [
     [47,25,1,{ a: "Foo2", b: "Bar1", c: { d: "ct", e: { f: 9 }, g: 1 } }],
