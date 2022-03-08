@@ -2577,6 +2577,6 @@ ____________________________________
 
 The [MIT License][license-url] (MIT)
 
-&copy; 2021 Sina Khodabandehloo
+&copy; (2021 - Present) Sina Khodabandehloo
 
 [license-url]:  https://github.com/Sinakhx/array-slayer/blob/main/LICENSE
