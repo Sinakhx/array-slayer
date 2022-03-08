@@ -24,10 +24,10 @@ const array = [
 ];
 
 const result = ArraySlayer(array)
-                .column(3, "c.e.f")
-                .concat([17, 2, 1, 18])
-                .replaceByValue(1, 100)
-                .unique()
+                .column(3, "c.e.f")           // -> [9, 5, 7, 1]
+                .concat([17, 2, 1, 18])       // -> [9, 5, 7, 1, 17, 2, 1, 18]
+                .replaceByValue(1, 100)       // -> [9, 5, 7, 100, 17, 2, 100, 18]
+                .unique()                     // -> [9, 5, 7, 100, 17, 2, 18]
                 .sort({ order: "ascending", sortType: "QuickSort"})
                 .value;
 
